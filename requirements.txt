@@ -1,0 +1,7 @@
+numpy>=1.24
+pandas>=2.0
+requests>=2.31
+tenacity>=8.2
+pyarrow>=14
+scipy>=1.11
+matplotlib>=3.7

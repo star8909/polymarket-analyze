@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+
+# Data cache (re-fetch via tools/)
+data/cache/
+data/snapshot/
+*.parquet
+*.csv.gz
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs (commit selectively)
+*.tmp.log
