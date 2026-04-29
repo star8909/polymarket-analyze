@@ -1,0 +1,24 @@
+C:\Projects\polymarket-analyze\iters\iter02_calibration.py:115: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  grouped = valid.groupby('bin').agg(
+[iter02] Calibration 곡선 분석
+  종료 마켓 로드: 20000 rows
+  거래량 1k+ 필터 후: 15859 (4141 제거)
+
+  outcomes 파싱 중...
+  결과 확정 마켓: 15595
+
+=== Calibration 곡선 (가격 vs 실제 Yes 비율) ===
+  Price bin                      N  Avg Price Actual Yes  Edge
+  ----------------------------------------------------------------------
+  (-0.001, 0.05]              8679      0.000      0.374  +0.373  🚀 LONG
+  (0.95, 1.0]                 6902      1.000      0.303  -0.697  ⚠️ SHORT
+
+=== 롱샷 편향 체크 (5센트 이하) ===
+  N=8680, Avg Price=0.000, Actual Yes=0.374, Edge=+0.373
+  🔄 역 롱샷: 5센트 이하 마켓 → 실제 확률 높음 → Yes 베팅 +EV
+
+=== Favorite 편향 체크 (95센트 이상) ===
+  N=6905, Avg Price=1.000, Actual Yes=0.304, Edge=-0.696
+  🔄 Favorite 과대평가: 95센트 이상 → 실제 확률 낮음 → No 베팅 +EV
+
+  → C:\Projects\polymarket-analyze\results\iter02_calibration.json

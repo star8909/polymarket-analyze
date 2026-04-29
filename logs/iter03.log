@@ -1,0 +1,130 @@
+[iter03] Sum-to-1 arbitrage 스캐너
+  활성 multi-outcome 마켓에서 가격 합 ≠ 1.0 위반 찾기
+  [fetch_active] page 0, +500, total=500
+  [fetch_active] page 1, +500, total=1000
+  [fetch_active] page 2, +500, total=1500
+  [fetch_active] page 3, +500, total=2000
+  [fetch_active] page 4, +500, total=2500
+  [fetch_active] page 5, +500, total=3000
+  [fetch_active] page 6, +500, total=3500
+  [fetch_active] page 7, +500, total=4000
+  [fetch_active] page 8, +500, total=4500
+  [fetch_active] page 9, +500, total=5000
+  [fetch_active] page 10, +500, total=5500
+  [fetch_active] page 11, +500, total=6000
+  [fetch_active] page 12, +500, total=6500
+  [fetch_active] page 13, +500, total=7000
+  [fetch_active] page 14, +500, total=7500
+  [fetch_active] page 15, +500, total=8000
+  [fetch_active] page 16, +500, total=8500
+  [fetch_active] page 17, +500, total=9000
+  [fetch_active] page 18, +500, total=9500
+  [fetch_active] page 19, +500, total=10000
+  활성 마켓 (거래량 1k+): 7297
+  이벤트 그룹: 1885
+  multi-outcome 이벤트 (≥2 마켓): 1132
+
+=== Sum-to-1 위반 (편차 5%+) ===
+  발견: 507개
+
+  [1] event 213341
+      n_markets=35, sum_Yes=11.225, edge=10.225
+      direction: BUY_ALL_NO
+      markets: will-albania-be-in-the-top-10-at-eurovision-2026, will-australia-be-in-the-top-10-at-eurovision-2026, will-austria-be-in-the-top-10-at-eurovision-2026
+
+  [2] event 166704
+      n_markets=15, sum_Yes=9.921, edge=8.921
+      direction: BUY_ALL_NO
+      markets: will-albania-advance-through-the-second-eurovision-semi-final, will-armenia-advance-through-the-second-eurovision-semi-final, will-australia-advance-through-the-second-eurovision-semi-final
+
+  [3] event 166699
+      n_markets=15, sum_Yes=9.736, edge=8.736
+      direction: BUY_ALL_NO
+      markets: will-belgium-advance-through-the-first-eurovision-semi-final, will-croatia-advance-through-the-first-eurovision-semi-final, will-estonia-advance-through-the-first-eurovision-semi-final
+
+  [4] event 125878
+      n_markets=11, sum_Yes=7.874, edge=6.874
+      direction: BUY_ALL_NO
+      markets: cl-above-90-jun-2026, cl-above-85-jun-2026, cl-above-80-jun-2026
+
+  [5] event 85704
+      n_markets=64, sum_Yes=7.806, edge=6.806
+      direction: BUY_ALL_NO
+      markets: will-gavin-newsom-announce-a-presidential-run-before-2027, will-alexandria-ocasio-cortez-announce-a-presidential-run-before-2027, will-pete-buttigieg-announce-a-presidential-run-before-2027
+
+  [6] event 79048
+      n_markets=30, sum_Yes=7.802, edge=6.802
+      direction: BUY_ALL_NO
+      markets: discord-ipo-before-2027, stripe-ipo-before-2027, ripple-labs-ipo-before-2027
+
+  [7] event 73079
+      n_markets=18, sum_Yes=6.622, edge=5.622
+      direction: BUY_ALL_NO
+      markets: will-donald-trump-visit-the-united-kingdom-in-2026, will-donald-trump-visit-israel-in-2026, will-donald-trump-visit-canada-in-2026
+
+  [8] event 73871
+      n_markets=17, sum_Yes=6.411, edge=5.411
+      direction: BUY_ALL_NO
+      markets: will-trump-meet-with-kim-jong-un-in-2026, will-trump-meet-with-xi-jinping-in-2026, will-trump-meet-with-mohammed-bin-salman-in-2026
+
+  [9] event 92611
+      n_markets=11, sum_Yes=6.396, edge=5.396
+      direction: BUY_ALL_NO
+      markets: will-donald-trump-visit-alaska-in-2026, will-donald-trump-visit-idaho-in-2026, will-donald-trump-visit-illinois-in-2026
+
+  [10] event 213335
+      n_markets=19, sum_Yes=6.098, edge=5.098
+      direction: BUY_ALL_NO
+      markets: will-australia-be-in-the-top-5-at-eurovision-2026, will-azerbaijan-be-in-the-top-5-at-eurovision-2026, will-cyprus-be-in-the-top-5-at-eurovision-2026
+
+  [11] event 244318
+      n_markets=10, sum_Yes=5.840, edge=4.840
+      direction: BUY_ALL_NO
+      markets: will-t1-qualify-to-msi-2026, will-geng-qualify-to-msi-2026, will-loud-qualify-to-msi-2026
+
+  [12] event 102007
+      n_markets=9, sum_Yes=5.835, edge=4.835
+      direction: BUY_ALL_NO
+      markets: spacex-ipo-closing-market-cap-above-1t-528, spacex-ipo-closing-market-cap-above-1pt4t-355, spacex-ipo-closing-market-cap-above-1pt2t-954
+
+  [13] event 228429
+      n_markets=22, sum_Yes=5.639, edge=4.639
+      direction: BUY_ALL_NO
+      markets: will-aaron-kahng-win-the-bachelorette-season-22, will-brad-ledford-win-the-bachelorette-season-22, will-brandon-perce-win-the-bachelorette-season-22
+
+  [14] event 23784
+      n_markets=9, sum_Yes=5.249, edge=4.249
+      direction: BUY_ALL_NO
+      markets: russia-ukraine-ceasefire-before-gta-vi-554, new-rhianna-album-before-gta-vi-926, new-playboi-carti-album-before-gta-vi-421
+
+  [15] event 106016
+      n_markets=8, sum_Yes=5.240, edge=4.240
+      direction: BUY_ALL_NO
+      markets: will-jack-antonoff-attend-taylor-swifts-wedding, will-selena-gomez-attend-taylor-swifts-wedding, will-brittany-mahomes-attend-taylor-swifts-wedding
+
+  [16] event 248380
+      n_markets=11, sum_Yes=5.221, edge=4.221
+      direction: BUY_ALL_NO
+      markets: will-big-qualify-to-iem-cologne-major-2026, will-sinners-esports-qualify-to-iem-cologne-major-2026, will-b8-qualify-to-iem-cologne-major-2026
+
+  [17] event 214405
+      n_markets=11, sum_Yes=5.079, edge=4.079
+      direction: BUY_ALL_NO
+      markets: predictfun-fdv-above-50m-one-day-after-launch, predictfun-fdv-above-100m-one-day-after-launch, predictfun-fdv-above-200m-one-day-after-launch
+
+  [18] event 73897
+      n_markets=13, sum_Yes=5.011, edge=4.011
+      direction: BUY_ALL_NO
+      markets: will-robert-f-kennedy-jr-leave-the-trump-administration-before-2027, will-karoline-leavitt-leave-the-trump-administration-before-2027, will-pete-hegseth-leave-the-trump-administration-before-2027
+
+  [19] event 121853
+      n_markets=9, sum_Yes=4.958, edge=3.958
+      direction: BUY_ALL_NO
+      markets: will-playboi-carti-release-an-album-in-2026, will-justin-bieber-release-an-album-in-2026, will-frank-ocean-release-an-album-in-2026
+
+  [20] event 89502
+      n_markets=27, sum_Yes=4.909, edge=3.909
+      direction: BUY_ALL_NO
+      markets: will-bitcoin-reach-200000-by-december-31-2026-752-232-389, will-bitcoin-reach-190000-by-december-31-2026-936-485-627, will-bitcoin-reach-180000-by-december-31-2026-629-622-598
+
+  → C:\Projects\polymarket-analyze\results\iter03_sum_to_one.json

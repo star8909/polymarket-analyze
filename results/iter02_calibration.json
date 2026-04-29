@@ -1,0 +1,19 @@
+{
+  "total_valid_markets": 15595,
+  "calibration_buckets": [
+    {
+      "bin": "(-0.001, 0.05]",
+      "n": 8679,
+      "avg_price": 6.083650190114069e-05,
+      "actual_yes_rate": 0.373545339324807
+    },
+    {
+      "bin": "(0.95, 1.0]",
+      "n": 6902,
+      "avg_price": 0.9999826137351493,
+      "actual_yes_rate": 0.30339032164589974
+    }
+  ],
+  "longshot_edge": 0.3734308755760369,
+  "favorite_edge": -0.6962534395365676
+}

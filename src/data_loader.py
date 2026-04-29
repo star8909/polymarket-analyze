@@ -93,19 +93,27 @@ def fetch_all_closed_markets(category: str | None = None,
 
 
 def fetch_active_markets(category: str | None = None,
-                         min_volume: float = 1000.0) -> pd.DataFrame:
-    """활성 마켓 (sum-to-1 스캐너용)."""
+                         min_volume: float = 1000.0,
+                         max_pages: int = 20) -> pd.DataFrame:
+    """활성 마켓 (sum-to-1 스캐너용). max_pages로 제한해 timeout 방지."""
     all_m: list[dict] = []
     offset = 0
     limit = 500
-    while True:
+    page = 0
+    while page < max_pages:
         time.sleep(1.0 / GAMMA_RATE_LIMIT)
-        batch = fetch_markets(closed=False, active=True, limit=limit,
-                              offset=offset, category=category)
+        try:
+            batch = fetch_markets(closed=False, active=True, limit=limit,
+                                  offset=offset, category=category)
+        except Exception as e:
+            print(f"  [fetch_active] page {page} error: {e}, stopping")
+            break
         if not batch:
             break
         all_m.extend(batch)
+        print(f"  [fetch_active] page {page}, +{len(batch)}, total={len(all_m)}")
         offset += limit
+        page += 1
         if len(batch) < limit:
             break
 

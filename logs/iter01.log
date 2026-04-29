@@ -1,0 +1,62 @@
+[iter01] Polymarket 종료 마켓 수집 (Gamma API)
+  warning: 첫 실행 시 수만 마켓 페이지네이션 → 5~30분 소요
+
+  [fetch_closed] offset=0, +500, total=500
+  [fetch_closed] offset=500, +500, total=1000
+  [fetch_closed] offset=1000, +500, total=1500
+  [fetch_closed] offset=1500, +500, total=2000
+  [fetch_closed] offset=2000, +500, total=2500
+  [fetch_closed] offset=2500, +500, total=3000
+  [fetch_closed] offset=3000, +500, total=3500
+  [fetch_closed] offset=3500, +500, total=4000
+  [fetch_closed] offset=4000, +500, total=4500
+  [fetch_closed] offset=4500, +500, total=5000
+  [fetch_closed] offset=5000, +500, total=5500
+  [fetch_closed] offset=5500, +500, total=6000
+  [fetch_closed] offset=6000, +500, total=6500
+  [fetch_closed] offset=6500, +500, total=7000
+  [fetch_closed] offset=7000, +500, total=7500
+  [fetch_closed] offset=7500, +500, total=8000
+  [fetch_closed] offset=8000, +500, total=8500
+  [fetch_closed] offset=8500, +500, total=9000
+  [fetch_closed] offset=9000, +500, total=9500
+  [fetch_closed] offset=9500, +500, total=10000
+  [fetch_closed] offset=10000, +500, total=10500
+  [fetch_closed] offset=10500, +500, total=11000
+  [fetch_closed] offset=11000, +500, total=11500
+  [fetch_closed] offset=11500, +500, total=12000
+  [fetch_closed] offset=12000, +500, total=12500
+  [fetch_closed] offset=12500, +500, total=13000
+  [fetch_closed] offset=13000, +500, total=13500
+  [fetch_closed] offset=13500, +500, total=14000
+  [fetch_closed] offset=14000, +500, total=14500
+  [fetch_closed] offset=14500, +500, total=15000
+  [fetch_closed] offset=15000, +500, total=15500
+  [fetch_closed] offset=15500, +500, total=16000
+  [fetch_closed] offset=16000, +500, total=16500
+  [fetch_closed] offset=16500, +500, total=17000
+  [fetch_closed] offset=17000, +500, total=17500
+  [fetch_closed] offset=17500, +500, total=18000
+  [fetch_closed] offset=18000, +500, total=18500
+  [fetch_closed] offset=18500, +500, total=19000
+  [fetch_closed] offset=19000, +500, total=19500
+  [fetch_closed] offset=19500, +500, total=20000
+  [cache] saved → C:\Projects\polymarket-analyze\data\cache\closed_all.parquet (20000 rows)
+
+총 수집: 20000 markets
+
+=== 통계 ===
+  컬럼 수: 132
+  주요 컬럼: ['id', 'question', 'conditionId', 'slug', 'twitterCardImage', 'endDate', 'category', 'liquidity', 'image', 'icon', 'description', 'outcomes', 'outcomePrices', 'volume', 'active']
+
+=== 거래량 ===
+  평균: $776,451
+  중간값: $10,807
+  거래량 1k+ 마켓: 15,859
+  거래량 10k+ 마켓: 10,240
+  거래량 100k+ 마켓: 3,289
+
+  outcome 파싱 가능: 100/100 (100 샘플 기준)
+
+  → C:\Projects\polymarket-analyze\results\iter01_fetch_closed.json
+  → 캐시: data/cache/closed_all.parquet

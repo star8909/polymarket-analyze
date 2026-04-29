@@ -26,37 +26,52 @@ from src.config import CACHE_DIR, RESULTS_DIR
 
 
 def parse_outcome(row: pd.Series) -> tuple[float | None, int | None]:
-    """단일 마켓 row에서 (close_price, actual_yes) 추출.
+    """단일 마켓 row에서 (closing_price, actual_yes) 추출.
 
-    actual_yes: 1 if Yes로 끝남, 0 if No, None if 불명
-    close_price: 종가 (마지막 거래)
+    closing_price: 종료 직전 마지막 거래 가격 (lastTradePrice)
+                   = 시장이 매긴 closing belief
+    actual_yes: 1 if Yes로 settle (outcomePrices[0]=1), 0 if No
+
+    핵심: outcomePrices는 settlement (0 or 1) — calibration용 X.
+    lastTradePrice가 시장의 closing belief.
     """
     try:
-        outcomes_str = row.get('outcomes', '[]')
+        # 1) actual outcome: outcomePrices의 settlement 값
         prices_str = row.get('outcomePrices', '[]')
-        if isinstance(outcomes_str, str):
-            outcomes = json.loads(outcomes_str)
-        else:
-            outcomes = outcomes_str
         if isinstance(prices_str, str):
             prices = json.loads(prices_str)
         else:
             prices = prices_str
-
-        if not isinstance(outcomes, list) or not isinstance(prices, list):
+        if not isinstance(prices, list) or len(prices) != 2:
             return None, None
-        if len(outcomes) != 2 or len(prices) != 2:
-            return None, None  # binary only
-
         prices_f = [float(p) for p in prices]
-        # binary 마켓: 보통 [Yes, No]
-        # 종가 1.0/0.0 → 결과 확정
+
         if prices_f[0] > 0.99:
-            return prices_f[0], 1  # Yes 측 가격, Yes로 끝남
-        if prices_f[1] > 0.99:
-            return prices_f[0], 0  # Yes 측 가격은 ~0, No로 끝남
-        # 미확정 (가격 중간)
-        return prices_f[0], None
+            actual_yes = 1
+        elif prices_f[1] > 0.99:
+            actual_yes = 0
+        else:
+            return None, None  # 미확정 settle (보통 cancel/void)
+
+        # 2) closing belief: lastTradePrice (시장이 매긴 마지막 확률)
+        last_price = row.get('lastTradePrice', None)
+        if last_price is None or pd.isna(last_price):
+            # 폴백: bestBid/bestAsk 평균
+            bid = row.get('bestBid', None)
+            ask = row.get('bestAsk', None)
+            if bid is not None and ask is not None and not pd.isna(bid) and not pd.isna(ask):
+                last_price = (float(bid) + float(ask)) / 2
+            else:
+                return None, None
+
+        last_price = float(last_price)
+        if last_price < 0 or last_price > 1:
+            return None, None
+
+        # 결과가 너무 자명한 경우 (closing 0.99+ 또는 0.01-) calibration 의미 없음
+        # → 그래도 포함 (binary 분포에서 양 끝점 보기 위해)
+
+        return last_price, actual_yes
     except (json.JSONDecodeError, ValueError, AttributeError, TypeError):
         return None, None
 

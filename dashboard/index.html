@@ -193,18 +193,26 @@
 
 <script>
 const champions = [
-  { iter: "01", name: "종료 마켓 수집 (Gamma API)", logic: "📊 calibration ground truth 데이터 수집 (closed markets + outcomes)",
-    edge: null, n_samples: null, kelly_size: null, annual_yield: null, risk: "Low",
-    score: 50, verdict: "warn", crown: false,
-    note: "🔄 진행 예정 — iter02 calibration 분석 ground truth" },
-  { iter: "02", name: "Calibration 곡선 분석", logic: "🎯 가격 buckets vs 실제 결과율 (롱샷/favorite 편향 자동 발견)",
-    edge: null, n_samples: null, kelly_size: null, annual_yield: null, risk: "Low",
-    score: null, verdict: "warn", crown: false,
-    note: "⏳ iter01 데이터 후 실행" },
-  { iter: "03", name: "Sum-to-1 Arbitrage 스캐너", logic: "🔢 multi-outcome 마켓 Yes 가격 합 ≠ 1.0 위반 → 무위험 차익",
-    edge: null, n_samples: null, kelly_size: null, annual_yield: null, risk: "Very Low",
-    score: null, verdict: "warn", crown: false,
-    note: "⏳ 활성 마켓 fetch 후 실행" },
+  { iter: "01", name: "✅ 종료 마켓 20K 수집 완료", logic: "📊 Gamma API로 closed markets 20,000개 수집 (132 컬럼, 1.5GB cache)",
+    edge: null, n_samples: 20000, kelly_size: null, annual_yield: null, risk: "Low",
+    score: 75, verdict: "ok", crown: false,
+    note: "✅ 거래량 1k+ 15,859 / 10k+ 10,240 / 100k+ 3,289 마켓" },
+  { iter: "02", name: "⚠️ Calibration 곡선 분석", logic: "❌ closed market lastTradePrice가 settle 후 reset되어 ground truth 불가",
+    edge: null, n_samples: 15595, kelly_size: null, annual_yield: null, risk: "Low",
+    score: 30, verdict: "bad", crown: false,
+    note: "⚠️ CLOB API prices-history 별도 fetch 필요 → iter06+에서 재시도" },
+  { iter: "03", name: "❌ Sum-to-1 Arb (naive)", logic: "❌ events 단순 그룹화 — Eurovision Top 10 등 multi-winner 마켓에서 false alarm",
+    edge: null, n_samples: 1132, kelly_size: null, annual_yield: null, risk: "High",
+    score: 30, verdict: "bad", crown: false,
+    note: "❌ 507 후보 발견했지만 진짜 차익 아님 (sum=N for Top-N 정상)" },
+  { iter: "04", name: "🚀 negRisk 차익 (raw)", logic: "🔢 negRisk=True 마켓만 그룹화 → sum_Yes 위반 측정 (5,506 마켓)",
+    edge: null, n_samples: 5506, kelly_size: null, annual_yield: null, risk: "Mid",
+    score: 65, verdict: "warn", crown: false,
+    note: "⚠️ 447 위반 발견 (265개 5%+) but 큰 deviation은 거래 비대칭 위험" },
+  { iter: "05", name: "🏆 안전 negRisk 차익 (필터)", logic: "🛡️ deviation 2~20% + 모든 마켓 vol 5k+ + n_markets 2~15 안전 필터",
+    edge: 0.0775, n_samples: 152, kelly_size: 0.0625, annual_yield: 0.40, risk: "Low",
+    score: 88, verdict: "ok", crown: true,
+    note: "🏆 152 진짜 차익 — Republican governorships sum=1.178 edge=17.75% vol $665k 등" },
 ];
 
 let sortKey = "score";

@@ -1,0 +1,305 @@
+{
+  "total_arbs": 507,
+  "arbs_top20": [
+    {
+      "event_id": "213341",
+      "n_markets": 35,
+      "sum_yes": 11.225,
+      "deviation": 10.225,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 10.225,
+      "markets": [
+        "will-albania-be-in-the-top-10-at-eurovision-2026",
+        "will-australia-be-in-the-top-10-at-eurovision-2026",
+        "will-austria-be-in-the-top-10-at-eurovision-2026",
+        "will-azerbaijan-be-in-the-top-10-at-eurovision-2026",
+        "will-belgium-be-in-the-top-10-at-eurovision-2026"
+      ]
+    },
+    {
+      "event_id": "166704",
+      "n_markets": 15,
+      "sum_yes": 9.9215,
+      "deviation": 8.9215,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 8.9215,
+      "markets": [
+        "will-albania-advance-through-the-second-eurovision-semi-final",
+        "will-armenia-advance-through-the-second-eurovision-semi-final",
+        "will-australia-advance-through-the-second-eurovision-semi-final",
+        "will-azerbaijan-advance-through-the-second-eurovision-semi-final",
+        "will-bulgaria-advance-through-the-second-eurovision-semi-final"
+      ]
+    },
+    {
+      "event_id": "166699",
+      "n_markets": 15,
+      "sum_yes": 9.7365,
+      "deviation": 8.7365,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 8.7365,
+      "markets": [
+        "will-belgium-advance-through-the-first-eurovision-semi-final",
+        "will-croatia-advance-through-the-first-eurovision-semi-final",
+        "will-estonia-advance-through-the-first-eurovision-semi-final",
+        "will-finland-advance-through-the-first-eurovision-semi-final",
+        "will-georgia-advance-through-the-first-eurovision-semi-final"
+      ]
+    },
+    {
+      "event_id": "125878",
+      "n_markets": 11,
+      "sum_yes": 7.874,
+      "deviation": 6.874,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 6.874,
+      "markets": [
+        "cl-above-90-jun-2026",
+        "cl-above-85-jun-2026",
+        "cl-above-80-jun-2026",
+        "cl-above-75-jun-2026",
+        "cl-above-70-jun-2026"
+      ]
+    },
+    {
+      "event_id": "85704",
+      "n_markets": 64,
+      "sum_yes": 7.806,
+      "deviation": 6.806,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 6.806,
+      "markets": [
+        "will-gavin-newsom-announce-a-presidential-run-before-2027",
+        "will-alexandria-ocasio-cortez-announce-a-presidential-run-before-2027",
+        "will-pete-buttigieg-announce-a-presidential-run-before-2027",
+        "will-josh-shapiro-announce-a-presidential-run-before-2027",
+        "will-wes-moore-announce-a-presidential-run-before-2027"
+      ]
+    },
+    {
+      "event_id": "79048",
+      "n_markets": 30,
+      "sum_yes": 7.802,
+      "deviation": 6.802,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 6.802,
+      "markets": [
+        "discord-ipo-before-2027",
+        "stripe-ipo-before-2027",
+        "ripple-labs-ipo-before-2027",
+        "cerebras-ipo-before-2027",
+        "ramp-ipo-before-2027"
+      ]
+    },
+    {
+      "event_id": "73079",
+      "n_markets": 18,
+      "sum_yes": 6.6225,
+      "deviation": 5.6225,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 5.6225,
+      "markets": [
+        "will-donald-trump-visit-the-united-kingdom-in-2026",
+        "will-donald-trump-visit-israel-in-2026",
+        "will-donald-trump-visit-canada-in-2026",
+        "will-donald-trump-visit-mexico-in-2026",
+        "will-donald-trump-visit-japan-in-2026"
+      ]
+    },
+    {
+      "event_id": "73871",
+      "n_markets": 17,
+      "sum_yes": 6.411,
+      "deviation": 5.411,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 5.411,
+      "markets": [
+        "will-trump-meet-with-kim-jong-un-in-2026",
+        "will-trump-meet-with-xi-jinping-in-2026",
+        "will-trump-meet-with-mohammed-bin-salman-in-2026",
+        "will-trump-meet-with-keir-starmer-in-2026",
+        "will-trump-meet-with-lai-ching-te-in-2026"
+      ]
+    },
+    {
+      "event_id": "92611",
+      "n_markets": 11,
+      "sum_yes": 6.3965,
+      "deviation": 5.3965,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 5.3965,
+      "markets": [
+        "will-donald-trump-visit-alaska-in-2026",
+        "will-donald-trump-visit-idaho-in-2026",
+        "will-donald-trump-visit-illinois-in-2026",
+        "will-donald-trump-visit-mississippi-in-2026",
+        "will-donald-trump-visit-new-hampshire-in-2026"
+      ]
+    },
+    {
+      "event_id": "213335",
+      "n_markets": 19,
+      "sum_yes": 6.098,
+      "deviation": 5.098,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 5.098,
+      "markets": [
+        "will-australia-be-in-the-top-5-at-eurovision-2026",
+        "will-azerbaijan-be-in-the-top-5-at-eurovision-2026",
+        "will-cyprus-be-in-the-top-5-at-eurovision-2026",
+        "will-denmark-be-in-the-top-5-at-eurovision-2026",
+        "will-estonia-be-in-the-top-5-at-eurovision-2026"
+      ]
+    },
+    {
+      "event_id": "244318",
+      "n_markets": 10,
+      "sum_yes": 5.8395,
+      "deviation": 4.8395,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 4.8395,
+      "markets": [
+        "will-t1-qualify-to-msi-2026",
+        "will-geng-qualify-to-msi-2026",
+        "will-loud-qualify-to-msi-2026",
+        "will-g2-esports-qualify-to-msi-2026",
+        "will-bnk-fearx-qualify-to-msi-2026"
+      ]
+    },
+    {
+      "event_id": "102007",
+      "n_markets": 9,
+      "sum_yes": 5.8355,
+      "deviation": 4.8355,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 4.8355,
+      "markets": [
+        "spacex-ipo-closing-market-cap-above-1t-528",
+        "spacex-ipo-closing-market-cap-above-1pt4t-355",
+        "spacex-ipo-closing-market-cap-above-1pt2t-954",
+        "spacex-ipo-closing-market-cap-above-1pt6t",
+        "spacex-ipo-closing-market-cap-above-2t-574"
+      ]
+    },
+    {
+      "event_id": "228429",
+      "n_markets": 22,
+      "sum_yes": 5.639,
+      "deviation": 4.639,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 4.639,
+      "markets": [
+        "will-aaron-kahng-win-the-bachelorette-season-22",
+        "will-brad-ledford-win-the-bachelorette-season-22",
+        "will-brandon-perce-win-the-bachelorette-season-22",
+        "will-casey-hux-win-the-bachelorette-season-22",
+        "will-christopher-wood-win-the-bachelorette-season-22"
+      ]
+    },
+    {
+      "event_id": "23784",
+      "n_markets": 9,
+      "sum_yes": 5.249,
+      "deviation": 4.249,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 4.249,
+      "markets": [
+        "russia-ukraine-ceasefire-before-gta-vi-554",
+        "new-rhianna-album-before-gta-vi-926",
+        "new-playboi-carti-album-before-gta-vi-421",
+        "will-jesus-christ-return-before-gta-vi-665",
+        "trump-out-as-president-before-gta-vi-846"
+      ]
+    },
+    {
+      "event_id": "106016",
+      "n_markets": 8,
+      "sum_yes": 5.24,
+      "deviation": 4.24,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 4.24,
+      "markets": [
+        "will-jack-antonoff-attend-taylor-swifts-wedding",
+        "will-selena-gomez-attend-taylor-swifts-wedding",
+        "will-brittany-mahomes-attend-taylor-swifts-wedding",
+        "will-patrick-mahomes-attend-taylor-swifts-wedding",
+        "will-este-haim-attend-taylor-swifts-wedding"
+      ]
+    },
+    {
+      "event_id": "248380",
+      "n_markets": 11,
+      "sum_yes": 5.2205,
+      "deviation": 4.2205,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 4.2205,
+      "markets": [
+        "will-big-qualify-to-iem-cologne-major-2026",
+        "will-sinners-esports-qualify-to-iem-cologne-major-2026",
+        "will-b8-qualify-to-iem-cologne-major-2026",
+        "will-team-liquid-qualify-to-iem-cologne-major-2026",
+        "will-og-qualify-to-iem-cologne-major-2026"
+      ]
+    },
+    {
+      "event_id": "214405",
+      "n_markets": 11,
+      "sum_yes": 5.0785,
+      "deviation": 4.0785,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 4.0785,
+      "markets": [
+        "predictfun-fdv-above-50m-one-day-after-launch",
+        "predictfun-fdv-above-100m-one-day-after-launch",
+        "predictfun-fdv-above-200m-one-day-after-launch",
+        "predictfun-fdv-above-300m-one-day-after-launch",
+        "predictfun-fdv-above-400m-one-day-after-launch"
+      ]
+    },
+    {
+      "event_id": "73897",
+      "n_markets": 13,
+      "sum_yes": 5.011,
+      "deviation": 4.011,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 4.011,
+      "markets": [
+        "will-robert-f-kennedy-jr-leave-the-trump-administration-before-2027",
+        "will-karoline-leavitt-leave-the-trump-administration-before-2027",
+        "will-pete-hegseth-leave-the-trump-administration-before-2027",
+        "will-marco-rubio-leave-the-trump-administration-before-2027",
+        "will-scott-bessent-leave-the-trump-administration-before-2027"
+      ]
+    },
+    {
+      "event_id": "121853",
+      "n_markets": 9,
+      "sum_yes": 4.9585,
+      "deviation": 3.9585,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 3.9585,
+      "markets": [
+        "will-playboi-carti-release-an-album-in-2026",
+        "will-justin-bieber-release-an-album-in-2026",
+        "will-frank-ocean-release-an-album-in-2026",
+        "will-drake-release-an-album-in-2026",
+        "will-lana-del-rey-release-an-album-in-2026"
+      ]
+    },
+    {
+      "event_id": "89502",
+      "n_markets": 27,
+      "sum_yes": 4.9085,
+      "deviation": 3.9085,
+      "direction": "BUY_ALL_NO",
+      "expected_edge": 3.9085,
+      "markets": [
+        "will-bitcoin-reach-200000-by-december-31-2026-752-232-389",
+        "will-bitcoin-reach-190000-by-december-31-2026-936-485-627",
+        "will-bitcoin-reach-180000-by-december-31-2026-629-622-598",
+        "will-bitcoin-reach-170000-by-december-31-2026-335-688-943",
+        "will-bitcoin-reach-160000-by-december-31-2026-934-934-164"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+[iter05] 안전 negRisk 차익 필터 (deviation 작음 + 거래량 큼)
+  [fetch_active] page 0, +500, total=500
+  [fetch_active] page 1, +500, total=1000
+  [fetch_active] page 2, +500, total=1500
+  [fetch_active] page 3, +500, total=2000
+  [fetch_active] page 4, +500, total=2500
+  [fetch_active] page 5, +500, total=3000
+  [fetch_active] page 6, +500, total=3500
+  [fetch_active] page 7, +500, total=4000
+  [fetch_active] page 8, +500, total=4500
+  [fetch_active] page 9, +500, total=5000
+  [fetch_active] page 10, +500, total=5500
+  [fetch_active] page 11, +500, total=6000
+  [fetch_active] page 12, +500, total=6500
+  [fetch_active] page 13, +500, total=7000
+  [fetch_active] page 14, +500, total=7500
+  [fetch_active] page 15, +500, total=8000
+  [fetch_active] page 16, +500, total=8500
+  [fetch_active] page 17, +500, total=9000
+  [fetch_active] page 18, +500, total=9500
+  [fetch_active] page 19, +500, total=10000
+  활성 마켓 (거래량 5k+): 5401
+  negRisk=True 마켓: 3565
+
+=== 🛡️ 안전 차익 (deviation 2~20%, 모든 마켓 vol 5k+, n_markets 2~15) ===
+  발견: 152개
+
+  Top 15:
+
+  [1] sum_Yes=0.8150 edge=18.50% direction=BUY_ALL_YES
+      n_markets=2, min_vol=$7,208, total_vol=$16,638
+        - Will Jared Moskowitz be the Democratic Nominee for FL-23? | Yes=0.395 | vol=$7,208
+        - Will Oliver Adams Larkin be the Democratic Nominee for FL-23 | Yes=0.420 | vol=$9,430
+
+  [2] sum_Yes=0.8160 edge=18.40% direction=BUY_ALL_YES
+      n_markets=3, min_vol=$6,097, total_vol=$19,139
+        - Will the Reserve Bank of Australia decrease the target for t | Yes=0.051 | vol=$6,097
+        - Will the Reserve Bank of Australia make no change to the tar | Yes=0.330 | vol=$6,416
+        - Will the Reserve Bank of Australia increase the target for t | Yes=0.435 | vol=$6,626
+
+  [3] sum_Yes=1.1775 edge=17.75% direction=BUY_ALL_NO
+      n_markets=7, min_vol=$5,023, total_vol=$664,685
+        - Will the Republican Party hold fewer than 22 governorships a | Yes=0.165 | vol=$44,931
+        - Will the Republican Party hold exactly 22 or 23 governorship | Yes=0.230 | vol=$5,699
+        - Will the Republican Party hold exactly 24 or 25 governorship | Yes=0.270 | vol=$29,899
+
+  [4] sum_Yes=0.8450 edge=15.50% direction=BUY_ALL_YES
+      n_markets=2, min_vol=$38,595, total_vol=$177,750
+        - Will the Democrats win the Michigan governor race in 2026? | Yes=0.685 | vol=$38,595
+        - Will the Republicans win the Michigan governor race in 2026? | Yes=0.160 | vol=$139,155
+
+  [5] sum_Yes=0.8450 edge=15.50% direction=BUY_ALL_YES
+      n_markets=3, min_vol=$5,927, total_vol=$62,862
+        - Will Iliana Iotova win the next Bulgarian presidential elect | Yes=0.550 | vol=$40,141
+        - Will Nikolai Denkov win the next Bulgarian presidential elec | Yes=0.200 | vol=$5,927
+        - Will Rosen Zhelyazkov win the next Bulgarian presidential el | Yes=0.095 | vol=$16,794
+
+  [6] sum_Yes=0.8520 edge=14.80% direction=BUY_ALL_YES
+      n_markets=13, min_vol=$5,458, total_vol=$925,759
+        - Will Click Bishop win the 2026 Alaska governor election? | Yes=0.032 | vol=$6,821
+        - Will David Bronson win the 2026 Alaska governor election? | Yes=0.024 | vol=$8,231
+        - Will Adam Crum win the 2026 Alaska governor election? | Yes=0.004 | vol=$38,325
+
+  [7] sum_Yes=1.1475 edge=14.75% direction=BUY_ALL_NO
+      n_markets=15, min_vol=$8,055, total_vol=$3,422,644
+        - Will Atlanta Braves win the 2026 National League Championshi | Yes=0.120 | vol=$18,846
+        - Will Miami Marlins win the 2026 National League Championship | Yes=0.026 | vol=$25,370
+        - Will New York Mets win the 2026 National League Championship | Yes=0.075 | vol=$48,577
+
+  [8] sum_Yes=0.8540 edge=14.60% direction=BUY_ALL_YES
+      n_markets=2, min_vol=$31,634, total_vol=$68,338
+        - Will the Democrats win the Montana Senate race in 2026? | Yes=0.059 | vol=$31,634
+        - Will the Republicans win the Montana Senate race in 2026? | Yes=0.795 | vol=$36,704
+
+  [9] sum_Yes=0.8595 edge=14.05% direction=BUY_ALL_YES
+      n_markets=3, min_vol=$8,508, total_vol=$30,332
+        - Will Jurgen Klopp be appointed as manager of Real Madrid? | Yes=0.185 | vol=$10,987
+        - Will Jose Mourinho be appointed as manager of Real Madrid? | Yes=0.565 | vol=$10,838
+        - Will Massimiliano Allegri be appointed as manager of Real Ma | Yes=0.110 | vol=$8,508
+
+  [10] sum_Yes=0.8600 edge=14.00% direction=BUY_ALL_YES
+      n_markets=2, min_vol=$5,153, total_vol=$12,752
+        - Will Laura Gillen be the Democratic nominee for NY-04? | Yes=0.745 | vol=$5,153
+        - Will Nicholas Sciretta be the Democratic nominee for NY-04? | Yes=0.115 | vol=$7,599
+
+  [11] sum_Yes=0.8650 edge=13.50% direction=BUY_ALL_YES
+      n_markets=2, min_vol=$24,875, total_vol=$78,647
+        - Will Strava’s market cap be between $2B and $3B at market cl | Yes=0.435 | vol=$53,773
+        - Will Strava’s market cap be between $3B and $4B at market cl | Yes=0.430 | vol=$24,875
+
+  [12] sum_Yes=0.8665 edge=13.35% direction=BUY_ALL_YES
+      n_markets=15, min_vol=$5,069, total_vol=$3,161,268
+        - Will Buffalo Bills win the 2027 NFL AFC Championship? | Yes=0.110 | vol=$5,069
+        - Will Miami Dolphins win the 2027 NFL AFC Championship? | Yes=0.018 | vol=$91,488
+        - Will New England Patriots win the 2027 NFL AFC Championship? | Yes=0.095 | vol=$12,138
+
+  [13] sum_Yes=1.1320 edge=13.20% direction=BUY_ALL_NO
+      n_markets=8, min_vol=$26,139, total_vol=$501,325
+        - Will Silver (SI) settle at <$50 in June? | Yes=0.050 | vol=$81,122
+        - Will Silver (SI) settle at $50-$60 in June? | Yes=0.146 | vol=$57,291
+        - Will Silver (SI) settle at $60-$70 in June? | Yes=0.237 | vol=$55,016
+
+  [14] sum_Yes=0.8700 edge=13.00% direction=BUY_ALL_YES
+      n_markets=2, min_vol=$23,279, total_vol=$49,663
+        - Will Cait Conley be the Democratic nominee for NY-17? | Yes=0.475 | vol=$26,384
+        - Will Beth Davidson be the Democratic nominee for NY-17? | Yes=0.395 | vol=$23,279
+
+  [15] sum_Yes=0.8700 edge=13.00% direction=BUY_ALL_YES
+      n_markets=3, min_vol=$7,761, total_vol=$30,553
+        - Will USA win Group D in the 2026 FIFA World Cup? | Yes=0.355 | vol=$9,825
+        - Will Paraguay win Group D in the 2026 FIFA World Cup? | Yes=0.175 | vol=$7,761
+        - Will Türkiye win Group D in the 2026 FIFA World Cup? | Yes=0.340 | vol=$12,966
+
+=== ⚠️ 큰 deviation (20%+, 거래 비대칭 위험) ===
+  무시: 77개 (Eurovision 등 multi-winner / stale price)
+
+  → C:\Projects\polymarket-analyze\results\iter05_safe_arb.json

@@ -1,0 +1,694 @@
+{
+  "total_negrisk_groups": 763,
+  "safe_arbs_count": 152,
+  "big_devs_count": 77,
+  "safe_arbs_top15": [
+    {
+      "negRiskMarketID": "0x0a8808f8c54ccf6cb962a972d41b61d82cdaa4019c1f7eb6ccbeab9372ff9900",
+      "n_markets": 2,
+      "sum_Yes": 0.815,
+      "deviation": 0.185,
+      "deviation_pct": 18.5,
+      "direction": "BUY_ALL_YES",
+      "expected_edge_pct": 18.5,
+      "min_volume": 7208.0,
+      "total_volume": 16638.0,
+      "markets": [
+        {
+          "slug": "will-jared-moskowitz-be-the-democratic-nominee-for-fl-23",
+          "question": "Will Jared Moskowitz be the Democratic Nominee for FL-23?",
+          "yes_price": 0.395,
+          "volume": 7208.033616
+        },
+        {
+          "slug": "will-oliver-adams-larkin-be-the-democratic-nominee-for-fl-23",
+          "question": "Will Oliver Adams Larkin be the Democratic Nominee for FL-23?",
+          "yes_price": 0.42,
+          "volume": 9430.224682000002
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0x1401d93b6cbbb6fa2a38ea2e487212378a24550e5297bae3f351dcea4b406b00",
+      "n_markets": 3,
+      "sum_Yes": 0.816,
+      "deviation": 0.184,
+      "deviation_pct": 18.4,
+      "direction": "BUY_ALL_YES",
+      "expected_edge_pct": 18.4,
+      "min_volume": 6097.0,
+      "total_volume": 19139.0,
+      "markets": [
+        {
+          "slug": "will-the-reserve-bank-of-australia-decrease-the-target-for-the-cash-rate-after-the-june-meeting",
+          "question": "Will the Reserve Bank of Australia decrease the target for the cash rate after t",
+          "yes_price": 0.051,
+          "volume": 6096.582298000001
+        },
+        {
+          "slug": "will-the-reserve-bank-of-australia-make-no-change-to-the-target-for-the-cash-rate-after-the-june-meeting",
+          "question": "Will the Reserve Bank of Australia make no change to the target for the cash rat",
+          "yes_price": 0.33,
+          "volume": 6416.276951000002
+        },
+        {
+          "slug": "will-the-reserve-bank-of-australia-increase-the-target-for-the-cash-rate-after-the-june-meeting",
+          "question": "Will the Reserve Bank of Australia increase the target for the cash rate after t",
+          "yes_price": 0.435,
+          "volume": 6625.917030999999
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0x5dd16f7a21616b3beaa789c1c5fe81dd1501dd5810536430bf218356d57cec00",
+      "n_markets": 7,
+      "sum_Yes": 1.1775,
+      "deviation": 0.1775,
+      "deviation_pct": 17.75,
+      "direction": "BUY_ALL_NO",
+      "expected_edge_pct": 17.75,
+      "min_volume": 5023.0,
+      "total_volume": 664685.0,
+      "markets": [
+        {
+          "slug": "will-the-republican-party-hold-fewer-than-22-governorships-after-the-2026-midterm-elections",
+          "question": "Will the Republican Party hold fewer than 22 governorships after the 2026 midter",
+          "yes_price": 0.165,
+          "volume": 44930.59946800001
+        },
+        {
+          "slug": "will-the-republican-party-hold-exactly-22-or-23-governorships-after-the-2026-midterm-elections",
+          "question": "Will the Republican Party hold exactly 22 or 23 governorships after the 2026 mid",
+          "yes_price": 0.23,
+          "volume": 5698.763161000003
+        },
+        {
+          "slug": "will-the-republican-party-hold-exactly-24-or-25-governorships-after-the-2026-midterm-elections",
+          "question": "Will the Republican Party hold exactly 24 or 25 governorships after the 2026 mid",
+          "yes_price": 0.27,
+          "volume": 29899.115962999997
+        },
+        {
+          "slug": "will-the-republican-party-hold-exactly-26-or-27-governorships-after-the-2026-midterm-elections",
+          "question": "Will the Republican Party hold exactly 26 or 27 governorships after the 2026 mid",
+          "yes_price": 0.1,
+          "volume": 13286.412995000006
+        },
+        {
+          "slug": "will-the-republican-party-hold-exactly-28-or-29-governorships-after-the-2026-midterm-elections",
+          "question": "Will the Republican Party hold exactly 28 or 29 governorships after the 2026 mid",
+          "yes_price": 0.0455,
+          "volume": 552966.6623040007
+        },
+        {
+          "slug": "will-the-republican-party-hold-exactly-30-or-31-governorships-after-the-2026-midterm-elections",
+          "question": "Will the Republican Party hold exactly 30 or 31 governorships after the 2026 mid",
+          "yes_price": 0.203,
+          "volume": 5023.273016000001
+        },
+        {
+          "slug": "will-the-republican-party-hold-32-or-more-governorships-after-the-2026-midterm-elections",
+          "question": "Will the Republican Party hold 32 or more governorships after the 2026 midterm e",
+          "yes_price": 0.164,
+          "volume": 12879.901709000002
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0x0f630f2d94013006884f5b9a06f372ee5002719ed28f498c7fab694e4b421c00",
+      "n_markets": 2,
+      "sum_Yes": 0.845,
+      "deviation": 0.155,
+      "deviation_pct": 15.5,
+      "direction": "BUY_ALL_YES",
+      "expected_edge_pct": 15.5,
+      "min_volume": 38595.0,
+      "total_volume": 177750.0,
+      "markets": [
+        {
+          "slug": "will-the-democrats-win-the-michigan-governor-race-in-2026",
+          "question": "Will the Democrats win the Michigan governor race in 2026?",
+          "yes_price": 0.685,
+          "volume": 38595.28395200003
+        },
+        {
+          "slug": "will-the-republicans-win-the-michigan-governor-race-in-2026",
+          "question": "Will the Republicans win the Michigan governor race in 2026?",
+          "yes_price": 0.16,
+          "volume": 139155.051281
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0xef5d7492655303593c7a062a7a675d5f6213c7c430db7e344d2cf4da7646f400",
+      "n_markets": 3,
+      "sum_Yes": 0.845,
+      "deviation": 0.155,
+      "deviation_pct": 15.5,
+      "direction": "BUY_ALL_YES",
+      "expected_edge_pct": 15.5,
+      "min_volume": 5927.0,
+      "total_volume": 62862.0,
+      "markets": [
+        {
+          "slug": "will-iliana-iotova-win-the-next-bulgarian-presidential-election",
+          "question": "Will Iliana Iotova win the next Bulgarian presidential election?",
+          "yes_price": 0.55,
+          "volume": 40141.137647
+        },
+        {
+          "slug": "will-nikolai-denkov-win-the-next-bulgarian-presidential-election",
+          "question": "Will Nikolai Denkov win the next Bulgarian presidential election?",
+          "yes_price": 0.2,
+          "volume": 5927.118765000001
+        },
+        {
+          "slug": "will-rosen-zhelyazkov-win-the-next-bulgarian-presidential-election",
+          "question": "Will Rosen Zhelyazkov win the next Bulgarian presidential election?",
+          "yes_price": 0.095,
+          "volume": 16793.734903999994
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0x7395ab20cf3adba8ef157424d6d9b20a00547275d3144eb9965eff9f80204e00",
+      "n_markets": 13,
+      "sum_Yes": 0.852,
+      "deviation": 0.148,
+      "deviation_pct": 14.8,
+      "direction": "BUY_ALL_YES",
+      "expected_edge_pct": 14.8,
+      "min_volume": 5458.0,
+      "total_volume": 925759.0,
+      "markets": [
+        {
+          "slug": "will-click-bishop-win-the-2026-alaska-governor-election",
+          "question": "Will Click Bishop win the 2026 Alaska governor election?",
+          "yes_price": 0.032,
+          "volume": 6820.764825999998
+        },
+        {
+          "slug": "will-david-bronson-win-the-2026-alaska-governor-election",
+          "question": "Will David Bronson win the 2026 Alaska governor election?",
+          "yes_price": 0.0235,
+          "volume": 8231.402984999999
+        },
+        {
+          "slug": "will-adam-crum-win-the-2026-alaska-governor-election",
+          "question": "Will Adam Crum win the 2026 Alaska governor election?",
+          "yes_price": 0.0045,
+          "volume": 38325.18956800002
+        },
+        {
+          "slug": "will-nancy-dahlstrom-win-the-2026-alaska-governor-election",
+          "question": "Will Nancy Dahlstrom win the 2026 Alaska governor election?",
+          "yes_price": 0.0995,
+          "volume": 115126.44578599988
+        },
+        {
+          "slug": "will-edna-devries-win-the-2026-alaska-governor-election",
+          "question": "Will Edna DeVries win the 2026 Alaska governor election?",
+          "yes_price": 0.0105,
+          "volume": 5457.606006000001
+        },
+        {
+          "slug": "will-matt-heilala-win-the-2026-alaska-governor-election",
+          "question": "Will Matt Heilala win the 2026 Alaska governor election?",
+          "yes_price": 0.0025,
+          "volume": 28178.90649300001
+        },
+        {
+          "slug": "will-shelley-hughes-win-the-2026-alaska-governor-election",
+          "question": "Will Shelley Hughes win the 2026 Alaska governor election?",
+          "yes_price": 0.0015,
+          "volume": 7975.902918000002
+        },
+        {
+          "slug": "will-james-parkin-win-the-2026-alaska-governor-election",
+          "question": "Will James Parkin win the 2026 Alaska governor election?",
+          "yes_price": 0.0015,
+          "volume": 102740.796787
+        },
+        {
+          "slug": "will-treg-taylor-win-the-2026-alaska-governor-election",
+          "question": "Will Treg Taylor win the 2026 Alaska governor election?",
+          "yes_price": 0.0635,
+          "volume": 14385.873658
+        },
+        {
+          "slug": "will-bernadette-wilson-win-the-2026-alaska-governor-election",
+          "question": "Will Bernadette Wilson win the 2026 Alaska governor election?",
+          "yes_price": 0.235,
+          "volume": 149532.27516100009
+        },
+        {
+          "slug": "will-lisa-murkowski-win-the-2026-alaska-governor-election",
+          "question": "Will Lisa Murkowski win the 2026 Alaska governor election?",
+          "yes_price": 0.0015,
+          "volume": 13863.142928
+        },
+        {
+          "slug": "will-tom-begich-win-the-2026-alaska-governor-election",
+          "question": "Will Tom Begich win the 2026 Alaska governor election?",
+          "yes_price": 0.375,
+          "volume": 111555.5555769998
+        },
+        {
+          "slug": "will-mary-peltola-win-the-2026-alaska-governor-election",
+          "question": "Will Mary Peltola win the 2026 Alaska governor election?",
+          "yes_price": 0.0015,
+          "volume": 323564.90212599986
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0xde6505b960e839587de0e1d46926238a714035b984c4add1c259d61a75d65800",
+      "n_markets": 15,
+      "sum_Yes": 1.1475,
+      "deviation": 0.1475,
+      "deviation_pct": 14.75,
+      "direction": "BUY_ALL_NO",
+      "expected_edge_pct": 14.75,
+      "min_volume": 8055.0,
+      "total_volume": 3422644.0,
+      "markets": [
+        {
+          "slug": "will-atlanta-braves-win-the-2026-national-league-championship-series",
+          "question": "Will Atlanta Braves win the 2026 National League Championship Series?",
+          "yes_price": 0.12,
+          "volume": 18846.115580999995
+        },
+        {
+          "slug": "will-miami-marlins-win-the-2026-national-league-championship-series",
+          "question": "Will Miami Marlins win the 2026 National League Championship Series?",
+          "yes_price": 0.026,
+          "volume": 25369.598455
+        },
+        {
+          "slug": "will-new-york-mets-win-the-2026-national-league-championship-series",
+          "question": "Will New York Mets win the 2026 National League Championship Series?",
+          "yes_price": 0.075,
+          "volume": 48576.65147399998
+        },
+        {
+          "slug": "will-philadelphia-phillies-win-the-2026-national-league-championship-series",
+          "question": "Will Philadelphia Phillies win the 2026 National League Championship Series?",
+          "yes_price": 0.065,
+          "volume": 30080.249610000003
+        },
+        {
+          "slug": "will-washington-nationals-win-the-2026-national-league-championship-series",
+          "question": "Will Washington Nationals win the 2026 National League Championship Series?",
+          "yes_price": 0.0045,
+          "volume": 13397.040382000005
+        },
+        {
+          "slug": "will-chicago-cubs-win-the-2026-national-league-championship-series",
+          "question": "Will Chicago Cubs win the 2026 National League Championship Series?",
+          "yes_price": 0.105,
+          "volume": 15125.376989
+        },
+        {
+          "slug": "will-cincinnati-reds-win-the-2026-national-league-championship-series",
+          "question": "Will Cincinnati Reds win the 2026 National League Championship Series?",
+          "yes_price": 0.062,
+          "volume": 278961.078708
+        },
+        {
+          "slug": "will-milwaukee-brewers-win-the-2026-national-league-championship-series",
+          "question": "Will Milwaukee Brewers win the 2026 National League Championship Series?",
+          "yes_price": 0.045,
+          "volume": 371658.5921800002
+        },
+        {
+          "slug": "will-pittsburgh-pirates-win-the-2026-national-league-championship-series",
+          "question": "Will Pittsburgh Pirates win the 2026 National League Championship Series?",
+          "yes_price": 0.0575,
+          "volume": 1046582.395244
+        },
+        {
+          "slug": "will-st-louis-cardinals-win-the-2026-national-league-championship-series",
+          "question": "Will St. Louis Cardinals win the 2026 National League Championship Series?",
+          "yes_price": 0.011,
+          "volume": 217612.684865
+        },
+        {
+          "slug": "will-arizona-diamondbacks-win-the-2026-national-league-championship-series",
+          "question": "Will Arizona Diamondbacks win the 2026 National League Championship Series?",
+          "yes_price": 0.036,
+          "volume": 235425.80969999987
+        },
+        {
+          "slug": "will-colorado-rockies-win-the-2026-national-league-championship-series",
+          "question": "Will Colorado Rockies win the 2026 National League Championship Series?",
+          "yes_price": 0.0275,
+          "volume": 125992.93515800002
+        },
+        {
+          "slug": "will-los-angeles-dodgers-win-the-2026-national-league-championship-series",
+          "question": "Will Los Angeles Dodgers win the 2026 National League Championship Series?",
+          "yes_price": 0.45,
+          "volume": 8054.790004000001
+        },
+        {
+          "slug": "will-san-diego-padres-win-the-2026-national-league-championship-series",
+          "question": "Will San Diego Padres win the 2026 National League Championship Series?",
+          "yes_price": 0.041,
+          "volume": 856810.5533100001
+        },
+        {
+          "slug": "will-san-francisco-giants-win-the-2026-national-league-championship-series",
+          "question": "Will San Francisco Giants win the 2026 National League Championship Series?",
+          "yes_price": 0.022,
+          "volume": 130150.03647500002
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0xda955e65203ced65f983c4bcbb9a24ce5262e316f6c4f5c1382a12c7c310b700",
+      "n_markets": 2,
+      "sum_Yes": 0.854,
+      "deviation": 0.146,
+      "deviation_pct": 14.6,
+      "direction": "BUY_ALL_YES",
+      "expected_edge_pct": 14.6,
+      "min_volume": 31634.0,
+      "total_volume": 68338.0,
+      "markets": [
+        {
+          "slug": "will-the-democrats-win-the-montana-senate-race-in-2026",
+          "question": "Will the Democrats win the Montana Senate race in 2026?",
+          "yes_price": 0.059,
+          "volume": 31633.56904399999
+        },
+        {
+          "slug": "will-the-republicans-win-the-montana-senate-race-in-2026",
+          "question": "Will the Republicans win the Montana Senate race in 2026?",
+          "yes_price": 0.795,
+          "volume": 36704.39787800002
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0xc9027555857be52ff2dbbca5779951b3132392f0aa2f9bee5234798c2702ed00",
+      "n_markets": 3,
+      "sum_Yes": 0.8595,
+      "deviation": 0.1405,
+      "deviation_pct": 14.05,
+      "direction": "BUY_ALL_YES",
+      "expected_edge_pct": 14.05,
+      "min_volume": 8508.0,
+      "total_volume": 30332.0,
+      "markets": [
+        {
+          "slug": "will-jurgen-klopp-be-appointed-as-manager-of-real-madrid",
+          "question": "Will Jurgen Klopp be appointed as manager of Real Madrid?",
+          "yes_price": 0.185,
+          "volume": 10986.92258400001
+        },
+        {
+          "slug": "will-jose-mourinho-be-appointed-as-manager-of-real-madrid",
+          "question": "Will Jose Mourinho be appointed as manager of Real Madrid?",
+          "yes_price": 0.565,
+          "volume": 10837.76918
+        },
+        {
+          "slug": "will-massimiliano-allegri-be-appointed-as-manager-of-real-madrid",
+          "question": "Will Massimiliano Allegri be appointed as manager of Real Madrid?",
+          "yes_price": 0.1095,
+          "volume": 8507.581084
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0xd83ef2d66b68877ea06b54b6760fd29df3df936a5cfe5ddaff6a5dbc562a5f00",
+      "n_markets": 2,
+      "sum_Yes": 0.86,
+      "deviation": 0.14,
+      "deviation_pct": 14.0,
+      "direction": "BUY_ALL_YES",
+      "expected_edge_pct": 14.0,
+      "min_volume": 5153.0,
+      "total_volume": 12752.0,
+      "markets": [
+        {
+          "slug": "will-laura-gillen-be-the-democratic-nominee-for-ny-04",
+          "question": "Will Laura Gillen be the Democratic nominee for NY-04?",
+          "yes_price": 0.745,
+          "volume": 5153.106889000015
+        },
+        {
+          "slug": "will-nicholas-sciretta-be-the-democratic-nominee-for-ny-04",
+          "question": "Will Nicholas Sciretta be the Democratic nominee for NY-04?",
+          "yes_price": 0.115,
+          "volume": 7598.808916000012
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0x30536fe16abddaa5865f45ed2944f1e62b5c6aa71558c58533a4213eddb2fd00",
+      "n_markets": 2,
+      "sum_Yes": 0.865,
+      "deviation": 0.135,
+      "deviation_pct": 13.5,
+      "direction": "BUY_ALL_YES",
+      "expected_edge_pct": 13.5,
+      "min_volume": 24875.0,
+      "total_volume": 78647.0,
+      "markets": [
+        {
+          "slug": "will-stravas-market-cap-be-between-2b-and-3b-at-market-close-on-ipo-day",
+          "question": "Will Strava’s market cap be between $2B and $3B at market close on IPO day?",
+          "yes_price": 0.435,
+          "volume": 53772.916172000005
+        },
+        {
+          "slug": "will-stravas-market-cap-be-between-3b-and-4b-at-market-close-on-ipo-day",
+          "question": "Will Strava’s market cap be between $3B and $4B at market close on IPO day?",
+          "yes_price": 0.43,
+          "volume": 24874.540821
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0x5337e0717e2659ac785da80b6a875d9839058c4c4e2aede232be2499f0be2d00",
+      "n_markets": 15,
+      "sum_Yes": 0.8665,
+      "deviation": 0.1335,
+      "deviation_pct": 13.35,
+      "direction": "BUY_ALL_YES",
+      "expected_edge_pct": 13.35,
+      "min_volume": 5069.0,
+      "total_volume": 3161268.0,
+      "markets": [
+        {
+          "slug": "will-buffalo-bills-win-the-2027-nfl-afc-championship-542",
+          "question": "Will Buffalo Bills win the 2027 NFL AFC Championship?",
+          "yes_price": 0.11,
+          "volume": 5069.354192
+        },
+        {
+          "slug": "will-miami-dolphins-win-the-2027-nfl-afc-championship-357",
+          "question": "Will Miami Dolphins win the 2027 NFL AFC Championship?",
+          "yes_price": 0.0185,
+          "volume": 91487.922528
+        },
+        {
+          "slug": "will-new-england-patriots-win-the-2027-nfl-afc-championship-417",
+          "question": "Will New England Patriots win the 2027 NFL AFC Championship?",
+          "yes_price": 0.095,
+          "volume": 12138.017506999991
+        },
+        {
+          "slug": "will-new-york-jets-win-the-2027-nfl-afc-championship-268",
+          "question": "Will New York Jets win the 2027 NFL AFC Championship?",
+          "yes_price": 0.016,
+          "volume": 392710.9722659998
+        },
+        {
+          "slug": "will-cincinnati-bengals-win-the-2027-nfl-afc-championship-267",
+          "question": "Will Cincinnati Bengals win the 2027 NFL AFC Championship?",
+          "yes_price": 0.068,
+          "volume": 163279.19417400006
+        },
+        {
+          "slug": "will-cleveland-browns-win-the-2027-nfl-afc-championship-776",
+          "question": "Will Cleveland Browns win the 2027 NFL AFC Championship?",
+          "yes_price": 0.02,
+          "volume": 123074.52140700004
+        },
+        {
+          "slug": "will-pittsburgh-steelers-win-the-2027-nfl-afc-championship-898",
+          "question": "Will Pittsburgh Steelers win the 2027 NFL AFC Championship?",
+          "yes_price": 0.024,
+          "volume": 508665.4511520002
+        },
+        {
+          "slug": "will-houston-texans-win-the-2027-nfl-afc-championship-334",
+          "question": "Will Houston Texans win the 2027 NFL AFC Championship?",
+          "yes_price": 0.0655,
+          "volume": 96613.09834
+        },
+        {
+          "slug": "will-indianapolis-colts-win-the-2027-nfl-afc-championship-168",
+          "question": "Will Indianapolis Colts win the 2027 NFL AFC Championship?",
+          "yes_price": 0.06,
+          "volume": 747942.4034029997
+        },
+        {
+          "slug": "will-jacksonville-jaguars-win-the-2027-nfl-afc-championship-539",
+          "question": "Will Jacksonville Jaguars win the 2027 NFL AFC Championship?",
+          "yes_price": 0.065,
+          "volume": 34480.02322699997
+        },
+        {
+          "slug": "will-tennessee-titans-win-the-2027-nfl-afc-championship-594",
+          "question": "Will Tennessee Titans win the 2027 NFL AFC Championship?",
+          "yes_price": 0.0135,
+          "volume": 529740.093791
+        },
+        {
+          "slug": "will-denver-broncos-win-the-2027-nfl-afc-championship-938",
+          "question": "Will Denver Broncos win the 2027 NFL AFC Championship?",
+          "yes_price": 0.095,
+          "volume": 45191.89422999998
+        },
+        {
+          "slug": "will-kansas-city-chiefs-win-the-2027-nfl-afc-championship-257",
+          "question": "Will Kansas City Chiefs win the 2027 NFL AFC Championship?",
+          "yes_price": 0.105,
+          "volume": 74677.93830700003
+        },
+        {
+          "slug": "will-las-vegas-raiders-win-the-2027-nfl-afc-championship-699",
+          "question": "Will Las Vegas Raiders win the 2027 NFL AFC Championship?",
+          "yes_price": 0.026,
+          "volume": 325210.71787999995
+        },
+        {
+          "slug": "will-los-angeles-chargers-win-the-2027-nfl-afc-championship-786",
+          "question": "Will Los Angeles Chargers win the 2027 NFL AFC Championship?",
+          "yes_price": 0.085,
+          "volume": 10986.333255
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0xccb5401a5f9ff36cf5f0b15c318c3174c461856c497d3e6b0c09ad53c5465500",
+      "n_markets": 8,
+      "sum_Yes": 1.132,
+      "deviation": 0.132,
+      "deviation_pct": 13.2,
+      "direction": "BUY_ALL_NO",
+      "expected_edge_pct": 13.2,
+      "min_volume": 26139.0,
+      "total_volume": 501325.0,
+      "markets": [
+        {
+          "slug": "si-settle-below-50-jun-2026",
+          "question": "Will Silver (SI) settle at <$50 in June?",
+          "yes_price": 0.05,
+          "volume": 81122.28732700013
+        },
+        {
+          "slug": "si-settle-50-60-jun-2026",
+          "question": "Will Silver (SI) settle at $50-$60 in June?",
+          "yes_price": 0.1465,
+          "volume": 57291.484053
+        },
+        {
+          "slug": "si-settle-60-70-jun-2026",
+          "question": "Will Silver (SI) settle at $60-$70 in June?",
+          "yes_price": 0.237,
+          "volume": 55016.41477599996
+        },
+        {
+          "slug": "si-settle-70-80-jun-2026",
+          "question": "Will Silver (SI) settle at $70-$80 in June?",
+          "yes_price": 0.2635,
+          "volume": 38725.355601
+        },
+        {
+          "slug": "si-settle-80-90-jun-2026",
+          "question": "Will Silver (SI) settle at $80-$90 in June?",
+          "yes_price": 0.16,
+          "volume": 26139.299037000023
+        },
+        {
+          "slug": "si-settle-90-100-jun-2026",
+          "question": "Will Silver (SI) settle at $90-$100 in June?",
+          "yes_price": 0.09,
+          "volume": 34178.269718
+        },
+        {
+          "slug": "si-settle-100-115-jun-2026",
+          "question": "Will Silver (SI) settle at $100-$115 in June?",
+          "yes_price": 0.115,
+          "volume": 40812.74430199999
+        },
+        {
+          "slug": "si-settle-above-115-jun-2026",
+          "question": "Will Silver (SI) settle at >$115 in June?",
+          "yes_price": 0.07,
+          "volume": 168039.01798599976
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0x284342deeede065045cbf905119edb13da5302710415a53262d26d1a52e42c00",
+      "n_markets": 2,
+      "sum_Yes": 0.87,
+      "deviation": 0.13,
+      "deviation_pct": 13.0,
+      "direction": "BUY_ALL_YES",
+      "expected_edge_pct": 13.0,
+      "min_volume": 23279.0,
+      "total_volume": 49663.0,
+      "markets": [
+        {
+          "slug": "will-cait-conley-be-the-democratic-nominee-for-ny-17",
+          "question": "Will Cait Conley be the Democratic nominee for NY-17?",
+          "yes_price": 0.475,
+          "volume": 26384.15046700001
+        },
+        {
+          "slug": "will-beth-davidson-be-the-democratic-nominee-for-ny-17",
+          "question": "Will Beth Davidson be the Democratic nominee for NY-17?",
+          "yes_price": 0.395,
+          "volume": 23278.820425
+        }
+      ]
+    },
+    {
+      "negRiskMarketID": "0x9a990055cd45540b23c19b549e25c8266fa24ae3825d7b0a6e018badf0fd0e00",
+      "n_markets": 3,
+      "sum_Yes": 0.87,
+      "deviation": 0.13,
+      "deviation_pct": 13.0,
+      "direction": "BUY_ALL_YES",
+      "expected_edge_pct": 13.0,
+      "min_volume": 7761.0,
+      "total_volume": 30553.0,
+      "markets": [
+        {
+          "slug": "will-usa-win-group-d-in-the-2026-fifa-world-cup",
+          "question": "Will USA win Group D in the 2026 FIFA World Cup?",
+          "yes_price": 0.355,
+          "volume": 9825.46316300001
+        },
+        {
+          "slug": "will-paraguay-win-group-d-in-the-2026-fifa-world-cup",
+          "question": "Will Paraguay win Group D in the 2026 FIFA World Cup?",
+          "yes_price": 0.175,
+          "volume": 7761.267833999999
+        },
+        {
+          "slug": "will-the-winner-of-kosovoromaniaslovakiatrkiye-playoff-win-group-d-in-the-2026-fifa-world-cup",
+          "question": "Will Türkiye win Group D in the 2026 FIFA World Cup?",
+          "yes_price": 0.34,
+          "volume": 12966.115956999998
+        }
+      ]
+    }
+  ]
+}
