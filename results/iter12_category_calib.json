@@ -1,0 +1,19 @@
+{
+  "categories": {
+    "other": {
+      "n_low": 33,
+      "avg_belief_low": 0.0012123642748868878,
+      "actual_yes_low": 0.0,
+      "edge_low": -0.0012123642748868878
+    }
+  },
+  "total_n": 72,
+  "calibration_buckets_10": [
+    {
+      "bin": "(-0.001, 0.1]",
+      "n": 50,
+      "avg_belief": 0.0019802605115104284,
+      "actual_yes": 0.0
+    }
+  ]
+}

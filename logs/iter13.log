@@ -1,0 +1,20 @@
+[iter13] iter09 stuck markets 시뮬레이션 (Kelly 0.25x)
+  종료 마켓: 20000
+  vol 50k+: 4973
+  settle 확정: 4892
+
+=== 시뮬레이션 결과 ===
+  초기자본: $10,000
+  최종자본: $10,038
+  총 수익: $38 (0.4%)
+  총 베팅: 1
+  승: 1, 패: 0, 승률: 100.0%
+  평균 PnL/베팅: $38.46
+
+=== Kelly fraction sweep ===
+  Kelly 0.10x: $10,000 → $10,015 (+0.2%)
+  Kelly 0.25x: $10,000 → $10,038 (+0.4%)
+  Kelly 0.50x: $10,000 → $10,077 (+0.8%)
+  Kelly 1.00x: $10,000 → $10,154 (+1.5%)
+
+  → C:\Projects\polymarket-analyze\results\iter13_simulate.json
