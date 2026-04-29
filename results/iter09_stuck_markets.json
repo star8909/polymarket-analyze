@@ -1,0 +1,170 @@
+{
+  "n_near_expiry_7d": 145,
+  "n_stuck_high": 13,
+  "n_stuck_low": 88,
+  "avg_edge_pct": 0.14,
+  "stuck_high_top10": [
+    {
+      "question": "Will Anthropic have the #3 AI model at the end of April 2026 (Style Control On)?",
+      "price": 0.953,
+      "spread": 0.009000000000000008,
+      "days_to_end": 0,
+      "volume": 40699.469088000034,
+      "edge_pct": 3.7000000000000033
+    },
+    {
+      "question": "Will Apple be the third-largest company in the world by market cap on April 30?",
+      "price": 0.963,
+      "spread": 0.017000000000000015,
+      "days_to_end": 0,
+      "volume": 76178.59414599999,
+      "edge_pct": 2.7000000000000024
+    },
+    {
+      "question": "Will the Central Bank of Colombia announce an increase at the April meeting?",
+      "price": 0.969,
+      "spread": 0.0010000000000000009,
+      "days_to_end": 0,
+      "volume": 15209.166159000011,
+      "edge_pct": 2.100000000000002
+    },
+    {
+      "question": "No change in Bank of England’s interest rates after April 2026 meeting?",
+      "price": 0.979,
+      "spread": 0.0030000000000000027,
+      "days_to_end": 0,
+      "volume": 146010.48752100006,
+      "edge_pct": 1.100000000000001
+    },
+    {
+      "question": "Will Anthropic have the #2 AI model at the end of April 2026 (Style Control On)?",
+      "price": 0.982,
+      "spread": 0.019000000000000017,
+      "days_to_end": 0,
+      "volume": 29518.563092,
+      "edge_pct": 0.8000000000000007
+    },
+    {
+      "question": "Will Anthropic have the best AI model at the end of April 2026?",
+      "price": 0.983,
+      "spread": 0.0040000000000000036,
+      "days_to_end": 0,
+      "volume": 1855721.2443130093,
+      "edge_pct": 0.7000000000000006
+    },
+    {
+      "question": "Will Anthropic have the second best AI model at the end of April 2026?",
+      "price": 0.986,
+      "spread": 0.0040000000000000036,
+      "days_to_end": 0,
+      "volume": 41901.71089300001,
+      "edge_pct": 0.40000000000000036
+    },
+    {
+      "question": "Will the ECB announce no change at the April 2026 meeting?",
+      "price": 0.987,
+      "spread": 0.0010000000000000009,
+      "days_to_end": 0,
+      "volume": 326388.0588770008,
+      "edge_pct": 0.30000000000000027
+    },
+    {
+      "question": "Will Anthropic have the #1 AI model at the end of April 2026 (Style Control On)?",
+      "price": 0.988,
+      "spread": 0.0030000000000000027,
+      "days_to_end": 0,
+      "volume": 152830.86381099984,
+      "edge_pct": 0.20000000000000018
+    },
+    {
+      "question": "Will Vivek Ramaswamy win the 2026 Ohio Governor Republican primary election?",
+      "price": 0.99,
+      "spread": 0.0030000000000000027,
+      "days_to_end": 5,
+      "volume": 160458.6411470001,
+      "edge_pct": 0.0
+    }
+  ],
+  "stuck_low_top10": [
+    {
+      "question": "Will the Patek Index hit $112,000 (HIGH) by April 30?",
+      "price": 0.05,
+      "spread": 0.013000000000000001,
+      "days_to_end": 0,
+      "volume": 31952.844863,
+      "edge_pct": 4.0
+    },
+    {
+      "question": "Will OpenAI have the #3 AI model at the end of April 2026 (Style Control On)?",
+      "price": 0.049,
+      "spread": 0.010999999999999996,
+      "days_to_end": 0,
+      "volume": 15205.289528999983,
+      "edge_pct": 3.9
+    },
+    {
+      "question": "Will the Silicon Data H100 Index (SDH100RT) hit $4.00 (HIGH) by April 30, 2026?",
+      "price": 0.046,
+      "spread": 0.005999999999999999,
+      "days_to_end": 0,
+      "volume": 93272.61379199996,
+      "edge_pct": 3.5999999999999996
+    },
+    {
+      "question": "Will Bad Bunny have a #1 hit in April?",
+      "price": 0.04,
+      "spread": 0.002999999999999999,
+      "days_to_end": 0,
+      "volume": 35267.172598000005,
+      "edge_pct": 3.0
+    },
+    {
+      "question": "Will the Rolex Index hit $13,150 (HIGH) by April 30?",
+      "price": 0.036,
+      "spread": 0.004999999999999999,
+      "days_to_end": 0,
+      "volume": 65062.18198300002,
+      "edge_pct": 2.5999999999999996
+    },
+    {
+      "question": "U.S. Congress member out over Epstein files by April 30?",
+      "price": 0.032,
+      "spread": 0.016999999999999998,
+      "days_to_end": 0,
+      "volume": 10164.864994999996,
+      "edge_pct": 2.1999999999999997
+    },
+    {
+      "question": "Will the Central Bank of Colombia announce no change at the April meeting?",
+      "price": 0.032,
+      "spread": 0.0040000000000000036,
+      "days_to_end": 0,
+      "volume": 12669.776528999992,
+      "edge_pct": 2.1999999999999997
+    },
+    {
+      "question": "Will Russia capture Bilytske by April 30, 2026?",
+      "price": 0.031,
+      "spread": 0.037,
+      "days_to_end": 0,
+      "volume": 76993.01935300019,
+      "edge_pct": 2.0999999999999996
+    },
+    {
+      "question": "Trump announces end of military operations against Iran by April 30th?",
+      "price": 0.028,
+      "spread": 0.0020000000000000018,
+      "days_to_end": 1,
+      "volume": 11361648.379137836,
+      "edge_pct": 1.8000000000000003
+    },
+    {
+      "question": "Will Russia capture all of Huliaipole by April 30?",
+      "price": 0.023,
+      "spread": 0.013000000000000001,
+      "days_to_end": 0,
+      "volume": 163650.61199199958,
+      "edge_pct": 1.3
+    }
+  ]
+}

@@ -221,6 +221,14 @@ const champions = [
     edge: 0.10, n_samples: 163, kelly_size: 0.025, annual_yield: 0.30, risk: "Mid",
     score: 75, verdict: "ok", crown: false,
     note: "📊 116 NO 후보 + 47 YES 후보. Valve Cache(-46.5%), Elon tweets(+55%) 등 백테스트 검증 필요" },
+  { iter: "08", name: "❌ Cross-market consistency", logic: "🔢 키워드 매칭 + 임계값 비교 (BTC dip vs reach 등)",
+    edge: null, n_samples: 155, kelly_size: null, annual_yield: null, risk: "High",
+    score: 30, verdict: "bad", crown: false,
+    note: "❌ regex 추출 버그 — dip vs reach 방향 혼동, conditional 관계 오인" },
+  { iter: "09", name: "🚀 Stuck Markets (만기 임박)", logic: "📅 D≤7일 + 가격 0.95+/0.05- + spread<5% — Settle 거의 확정",
+    edge: 0.025, n_samples: 101, kelly_size: 0.0625, annual_yield: 0.50, risk: "Low",
+    score: 90, verdict: "ok", crown: true,
+    note: "🏆 매일 100+ 후보. Trump Iran ops vol $11M edge 1.8%, Apple #3 edge 2.7% 등 — frequency 강력" },
 ];
 
 let sortKey = "score";

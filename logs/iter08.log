@@ -1,0 +1,103 @@
+[iter08] Cross-market consistency (조건부 확률 위반)
+  [fetch_active] page 0, +500, total=500
+  [fetch_active] page 1, +500, total=1000
+  [fetch_active] page 2, +500, total=1500
+  [fetch_active] page 3, +500, total=2000
+  [fetch_active] page 4, +500, total=2500
+  [fetch_active] page 5, +500, total=3000
+  [fetch_active] page 6, +500, total=3500
+  [fetch_active] page 7, +500, total=4000
+  [fetch_active] page 8, +500, total=4500
+  [fetch_active] page 9, +500, total=5000
+  [fetch_active] page 10, +500, total=5500
+  [fetch_active] page 11, +500, total=6000
+  [fetch_active] page 12, +500, total=6500
+  [fetch_active] page 13, +500, total=7000
+  [fetch_active] page 14, +500, total=7500
+  [fetch_active] page 15, +500, total=8000
+  [fetch_active] page 16, +500, total=8500
+  [fetch_active] page 17, +500, total=9000
+  [fetch_active] page 18, +500, total=9500
+  [fetch_active] page 19, +500, total=10000
+  활성 마켓 (vol 10k+): 4384
+  의미있는 가격 (0.01~0.99): 2911
+
+=== Cross-market 조건부 위반 (수치 임계값 기반) ===
+  발견: 155개
+
+  [1] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin dip to $5,000 by December 31, 2026? | n=5,000,000,000,000 | price=0.028
+      Q2: Will Bitcoin reach $80,000 by December 31, 2026? | n=80,000,000,000,000 | price=0.896
+      edge=84.80% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [2] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin dip to $10,000 by December 31, 2026? | n=10,000,000,000,000 | price=0.034
+      Q2: Will Bitcoin reach $80,000 by December 31, 2026? | n=80,000,000,000,000 | price=0.896
+      edge=84.20% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [3] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin dip to $15,000 by December 31, 2026? | n=15,000,000,000,000 | price=0.038
+      Q2: Will Bitcoin reach $80,000 by December 31, 2026? | n=80,000,000,000,000 | price=0.896
+      edge=83.80% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [4] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin dip to $20,000 by December 31, 2026? | n=20,000,000,000,000 | price=0.060
+      Q2: Will Bitcoin reach $80,000 by December 31, 2026? | n=80,000,000,000,000 | price=0.896
+      edge=81.60% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [5] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin dip to $25,000 by December 31, 2026? | n=25,000,000,000,000 | price=0.080
+      Q2: Will Bitcoin reach $80,000 by December 31, 2026? | n=80,000,000,000,000 | price=0.896
+      edge=79.60% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [6] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin hit $150k by December 31, 2026? | n=150,000 | price=0.100
+      Q2: Will Bitcoin reach $80,000 by December 31, 2026? | n=80,000,000,000,000 | price=0.896
+      edge=77.60% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [7] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin dip to $30,000 by December 31, 2026? | n=30,000,000,000,000 | price=0.120
+      Q2: Will Bitcoin reach $80,000 by December 31, 2026? | n=80,000,000,000,000 | price=0.896
+      edge=75.60% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [8] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin dip to $35,000 by December 31, 2026? | n=35,000,000,000,000 | price=0.150
+      Q2: Will Bitcoin reach $80,000 by December 31, 2026? | n=80,000,000,000,000 | price=0.896
+      edge=72.60% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [9] SOL | endDate=2027-01-01
+      Q1: Will Solana dip to $60 by December 31, 2026? | n=60,000,000,000 | price=0.760
+      Q2: Solstice FDV above $400M one day after launch? | n=400,000,000 | price=0.070
+      edge=67.00% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [10] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin dip to $40,000 by December 31, 2026? | n=40,000,000,000,000 | price=0.210
+      Q2: Will Bitcoin reach $80,000 by December 31, 2026? | n=80,000,000,000,000 | price=0.896
+      edge=66.60% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [11] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin reach $80,000 by December 31, 2026? | n=80,000,000,000,000 | price=0.896
+      Q2: Will Bitcoin hit $60k or $80k first? | n=60,000 | price=0.210
+      edge=66.60% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [12] SOL | endDate=2027-01-01
+      Q1: Will Solana dip to $60 by December 31, 2026? | n=60,000,000,000 | price=0.760
+      Q2: Will Solana dip to $20 by December 31, 2026? | n=20,000,000,000 | price=0.130
+      edge=61.00% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [13] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin dip to $45,000 by December 31, 2026? | n=45,000,000,000,000 | price=0.290
+      Q2: Will Bitcoin reach $80,000 by December 31, 2026? | n=80,000,000,000,000 | price=0.896
+      edge=58.60% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [14] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin dip to $5,000 by December 31, 2026? | n=5,000,000,000,000 | price=0.028
+      Q2: Will Bitcoin reach $90,000 by December 31, 2026? | n=90,000,000,000,000 | price=0.550
+      edge=50.20% (낮은 임계값 가격이 더 비싸야 정상)
+
+  [15] BITCOIN | endDate=2027-01-01
+      Q1: Will Bitcoin dip to $10,000 by December 31, 2026? | n=10,000,000,000,000 | price=0.034
+      Q2: Will Bitcoin reach $90,000 by December 31, 2026? | n=90,000,000,000,000 | price=0.550
+      edge=49.60% (낮은 임계값 가격이 더 비싸야 정상)
+
+  → C:\Projects\polymarket-analyze\results\iter08_cross_market.json
