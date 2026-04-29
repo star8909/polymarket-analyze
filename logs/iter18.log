@@ -1,0 +1,29 @@
+[iter18] Holder concentration (Gini coefficient)
+  vol 100k+: 3289
+  settle + token: 3233
+
+  Streaming CSV (trader concentration 측정)...
+    chunks=30, markets=2927
+    chunks=60, markets=2943
+    chunks=90, markets=2943
+    chunks=120, markets=2943
+
+  Markets with trader data: 2943
+  분석 가능 마켓: 2942
+
+=== Trader concentration 분포 ===
+  Gini 평균: 0.897
+  Gini median: 0.914
+  Trader 수 평균: 1867
+  Trader 수 median: 270
+
+=== Gini bucket vs actual outcome ===
+  Mid Gini (0.5~0.8): N=243, Yes 비율 11.1%
+  High Gini (집중) (0.8~1.0): N=2695, Yes 비율 25.8%
+
+=== Trader 수 bucket vs Yes 비율 ===
+  소수 (5-50): N=215, Yes 비율 30.7%
+  중간 (50-200): N=995, Yes 비율 31.4%
+  대중 (200+): N=1730, Yes 비율 19.8%
+
+  → C:\Projects\polymarket-analyze\results\iter18_holder_concentration.json
