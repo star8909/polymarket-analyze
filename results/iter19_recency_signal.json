@@ -1,0 +1,97 @@
+{
+  "n_markets": 1207,
+  "extreme_pos_2sigma": 18,
+  "extreme_neg_2sigma": 22,
+  "top_extreme_pos": [
+    {
+      "question": "Will Google reach $375 in April?",
+      "price": 0.825,
+      "change_1h_pct": 59.050000000000004,
+      "volume": 19435.60813500001
+    },
+    {
+      "question": "Will the US federal government take a stake in Rigetti Computing, Inc.?",
+      "price": 0.34,
+      "change_1h_pct": 32.2,
+      "volume": 18847.03759
+    },
+    {
+      "question": "Will Somaliland join the Abraham Accords before 2027?",
+      "price": 0.4,
+      "change_1h_pct": 29.5,
+      "volume": 61260.99374799999
+    },
+    {
+      "question": "Will Sandy Spidel Neumann be the Democratic nominee for Senate in Kansas?",
+      "price": 0.748,
+      "change_1h_pct": 25.900000000000002,
+      "volume": 30001.794713999967
+    },
+    {
+      "question": "Will Brittany Mahomes attend Taylor Swift's wedding?",
+      "price": 0.84,
+      "change_1h_pct": 24.5,
+      "volume": 10986.697147
+    },
+    {
+      "question": "Will Databricks’ market cap be between $100B and $125B at market close on IPO da",
+      "price": 0.1,
+      "change_1h_pct": 19.55,
+      "volume": 61033.57252899997
+    },
+    {
+      "question": "Will the Republican Party win the OH-09 House seat?",
+      "price": 0.45,
+      "change_1h_pct": 19.5,
+      "volume": 19733.031744000014
+    },
+    {
+      "question": "Will Este Haim attend Taylor Swift's wedding?",
+      "price": 0.71,
+      "change_1h_pct": 19.5,
+      "volume": 20240.12534700001
+    },
+    {
+      "question": "Will the Republican Party hold between 195 and 199 House seats after the 2026 mi",
+      "price": 0.09,
+      "change_1h_pct": 19.0,
+      "volume": 26944.249572
+    },
+    {
+      "question": "Will Perry Johnson win the 2026 Michigan Governor Republican primary election?",
+      "price": 0.45,
+      "change_1h_pct": 17.0,
+      "volume": 10910.245826000002
+    },
+    {
+      "question": "Will the Democratic Party win the WA-04 House seat?",
+      "price": 0.17,
+      "change_1h_pct": 15.0,
+      "volume": 12556.707311000004
+    },
+    {
+      "question": "Will Christian Menefee be the Democratic nominee for TX-18?",
+      "price": 0.849,
+      "change_1h_pct": 13.5,
+      "volume": 15754.189708999987
+    },
+    {
+      "question": "Will Israel launch a major ground offensive in Gaza by June 30?",
+      "price": 0.17,
+      "change_1h_pct": 11.5,
+      "volume": 24688.67807000007
+    },
+    {
+      "question": "Will Oro launch a token by June 30, 2026?",
+      "price": 0.5,
+      "change_1h_pct": 10.5,
+      "volume": 24801.45685499999
+    },
+    {
+      "question": "Will the Republican Party win the VA-06 House seat?",
+      "price": 0.27,
+      "change_1h_pct": 9.5,
+      "volume": 24771.630815
+    }
+  ]
+}
