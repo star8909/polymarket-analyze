@@ -1,0 +1,79 @@
+{
+  "n_total": 2459,
+  "median_vol_per_liq": 14.78890430541091,
+  "n_suspicious": 123,
+  "n_high_vol_low_liq": 257,
+  "n_recent_active": 4,
+  "top_suspicious": [
+    {
+      "question": "Will Martín Zubimendi record the most yellow cards in 2025-26 UEFA Champions Lea",
+      "volume": 79466.46331600005,
+      "liquidity": 1.511,
+      "vol_per_liq": 52591.967780278,
+      "price": 0.03
+    },
+    {
+      "question": "Over $1B raised on Coinbase in 2026?",
+      "volume": 103263.65969499997,
+      "liquidity": 4.4512,
+      "vol_per_liq": 23199.06085886951,
+      "price": 0.09
+    },
+    {
+      "question": "Will Lew Evans win The Bachelorette Season 22?",
+      "volume": 129468.505,
+      "liquidity": 18.46008,
+      "vol_per_liq": 7013.431415248471,
+      "price": 0.002
+    },
+    {
+      "question": "Will Nebius Group be acquired before 2027?",
+      "volume": 7913152.232558053,
+      "liquidity": 1249.9196,
+      "vol_per_liq": 6330.92899139917,
+      "price": 0.18
+    },
+    {
+      "question": "Will Viking Therapeutics be acquired before 2027?",
+      "volume": 1686146.752682002,
+      "liquidity": 269.8175,
+      "vol_per_liq": 6249.21197728836,
+      "price": 0.26
+    },
+    {
+      "question": "Over $600M raised on Coinbase in 2026?",
+      "volume": 62757.744718,
+      "liquidity": 10.1606,
+      "vol_per_liq": 6176.578619176033,
+      "price": 0.05
+    },
+    {
+      "question": "Nara Smith confirmed pregnant in 2026?",
+      "volume": 77214.29943699998,
+      "liquidity": 13.93,
+      "vol_per_liq": 5543.022213711413,
+      "price": 0.58
+    },
+    {
+      "question": "Will there be at least 10000 measles cases in the U.S. in 2026?",
+      "volume": 6487467.866168992,
+      "liquidity": 1245.48723,
+      "vol_per_liq": 5208.779110620822,
+      "price": 0.117
+    },
+    {
+      "question": "Will Exponent launch a token by December 31, 2026?",
+      "volume": 349601.80091700004,
+      "liquidity": 70.803,
+      "vol_per_liq": 4937.669320749122,
+      "price": 0.68
+    },
+    {
+      "question": "Will Perplexity not IPO by December 31, 2027?",
+      "volume": 106340.39830899994,
+      "liquidity": 22.711,
+      "vol_per_liq": 4682.330073928931,
+      "price": 0.7
+    }
+  ]
+}

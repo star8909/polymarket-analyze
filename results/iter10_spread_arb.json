@@ -1,0 +1,128 @@
+{
+  "n_total": 3969,
+  "n_big_spread": 234,
+  "n_stale": 678,
+  "median_spread": 0.010000000000000009,
+  "top_big_spread": [
+    {
+      "question": "Will Lew Evans win The Bachelorette Season 22?",
+      "bid": 0.01,
+      "ask": 0.982,
+      "spread": 0.972,
+      "spread_pct": 195.96774193548387,
+      "volume": 129468.505
+    },
+    {
+      "question": "Over $1B raised on Coinbase in 2026?",
+      "bid": 0.01,
+      "ask": 0.97,
+      "spread": 0.96,
+      "spread_pct": 195.91836734693877,
+      "volume": 103263.65969499997
+    },
+    {
+      "question": "Will USDC hit 50% of USDT market cap by December 31, 2026?",
+      "bid": 0.06,
+      "ask": 0.98,
+      "spread": 0.9199999999999999,
+      "spread_pct": 176.9230769230769,
+      "volume": 101070.7868640001
+    },
+    {
+      "question": "Will Martín Zubimendi record the most yellow cards in 2025-26 UEFA Champions Lea",
+      "bid": 0.02,
+      "ask": 0.93,
+      "spread": 0.91,
+      "spread_pct": 191.57894736842104,
+      "volume": 79466.46331600005
+    },
+    {
+      "question": "Felix Protocol FDV above $2B one day after launch?",
+      "bid": 0.01,
+      "ask": 0.919,
+      "spread": 0.909,
+      "spread_pct": 195.69429494079657,
+      "volume": 67047.09682599998
+    },
+    {
+      "question": "Will Sabrina Carpenter be the Billboard #1 top artist in 2026?",
+      "bid": 0.01,
+      "ask": 0.911,
+      "spread": 0.901,
+      "spread_pct": 195.656894679696,
+      "volume": 57207.45287400005
+    },
+    {
+      "question": "Will Trump launch a coin by December 31?",
+      "bid": 0.06,
+      "ask": 0.95,
+      "spread": 0.8899999999999999,
+      "spread_pct": 176.23762376237622,
+      "volume": 76210.19779700006
+    },
+    {
+      "question": "Nara Smith confirmed pregnant in 2026?",
+      "bid": 0.04,
+      "ask": 0.9,
+      "spread": 0.86,
+      "spread_pct": 182.9787234042553,
+      "volume": 77214.29943699998
+    },
+    {
+      "question": "Will Databricks’ market cap be between $100B and $125B at market close on IPO da",
+      "bid": 0.01,
+      "ask": 0.849,
+      "spread": 0.839,
+      "spread_pct": 195.34342258440049,
+      "volume": 60802.74294499997
+    },
+    {
+      "question": "Over $400M raised on Coinbase in 2026?",
+      "bid": 0.18,
+      "ask": 0.987,
+      "spread": 0.8069999999999999,
+      "spread_pct": 138.3033419023136,
+      "volume": 57750.66341099999
+    },
+    {
+      "question": "Will Juan Carlos Valencia Gonzalez be arrested in 2026?",
+      "bid": 0.02,
+      "ask": 0.82,
+      "spread": 0.7999999999999999,
+      "spread_pct": 190.47619047619045,
+      "volume": 58515.99479999999
+    },
+    {
+      "question": "Will Hibachi launch a token by December 31, 2026?",
+      "bid": 0.14,
+      "ask": 0.94,
+      "spread": 0.7999999999999999,
+      "spread_pct": 148.14814814814812,
+      "volume": 240451.1752580001
+    },
+    {
+      "question": "Over $600M raised on Coinbase in 2026?",
+      "bid": 0.05,
+      "ask": 0.85,
+      "spread": 0.7999999999999999,
+      "spread_pct": 177.77777777777777,
+      "volume": 62757.744718
+    },
+    {
+      "question": "Abstract FDV above $3B one day after launch?",
+      "bid": 0.01,
+      "ask": 0.794,
+      "spread": 0.784,
+      "spread_pct": 195.02487562189054,
+      "volume": 150478.0516989998
+    },
+    {
+      "question": "Will Daylight launch a token by September 30, 2026?",
+      "bid": 0.13,
+      "ask": 0.9,
+      "spread": 0.77,
+      "spread_pct": 149.51456310679612,
+      "volume": 50314.36972299993
+    }
+  ]
+}

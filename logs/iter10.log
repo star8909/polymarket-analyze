@@ -1,0 +1,87 @@
+[iter10] Spread / liquidity 차익
+  [fetch_active] page 0, +500, total=500
+  [fetch_active] page 1, +500, total=1000
+  [fetch_active] page 2, +500, total=1500
+  [fetch_active] page 3, +500, total=2000
+  [fetch_active] page 4, +500, total=2500
+  [fetch_active] page 5, +500, total=3000
+  [fetch_active] page 6, +500, total=3500
+  [fetch_active] page 7, +500, total=4000
+  [fetch_active] page 8, +500, total=4500
+  [fetch_active] page 9, +500, total=5000
+  [fetch_active] page 10, +500, total=5500
+  [fetch_active] page 11, +500, total=6000
+  [fetch_active] page 12, +500, total=6500
+  [fetch_active] page 13, +500, total=7000
+  [fetch_active] page 14, +500, total=7500
+  [fetch_active] page 15, +500, total=8000
+  [fetch_active] page 16, +500, total=8500
+  [fetch_active] page 17, +500, total=9000
+  [fetch_active] page 18, +500, total=9500
+  [fetch_active] page 19, +500, total=10000
+  활성 마켓 (vol 10k+): 4384
+  유효 bid/ask: 3969
+
+=== Spread 분포 ===
+  median spread: 0.0100
+  90th: 0.1500
+  99th: 0.9273
+
+  큰 spread (≥5%) + vol 50k+: 234
+  Stale price (|last - mid| > 5%): 678
+
+=== Top 큰 spread (market making 후보) ===
+  bid=0.010 ask=0.982 spread=0.972 (196.0%) | last=0.002 | vol=$129,469
+     Will Lew Evans win The Bachelorette Season 22?
+  bid=0.010 ask=0.970 spread=0.960 (195.9%) | last=0.090 | vol=$103,264
+     Over $1B raised on Coinbase in 2026?
+  bid=0.060 ask=0.980 spread=0.920 (176.9%) | last=0.530 | vol=$101,071
+     Will USDC hit 50% of USDT market cap by December 31, 2026?
+  bid=0.020 ask=0.930 spread=0.910 (191.6%) | last=0.030 | vol=$79,466
+     Will Martín Zubimendi record the most yellow cards in 2025-26 UEFA Champions Lea
+  bid=0.010 ask=0.919 spread=0.909 (195.7%) | last=0.006 | vol=$67,047
+     Felix Protocol FDV above $2B one day after launch?
+  bid=0.010 ask=0.911 spread=0.901 (195.7%) | last=0.121 | vol=$57,207
+     Will Sabrina Carpenter be the Billboard #1 top artist in 2026?
+  bid=0.060 ask=0.950 spread=0.890 (176.2%) | last=0.120 | vol=$76,210
+     Will Trump launch a coin by December 31?
+  bid=0.040 ask=0.900 spread=0.860 (183.0%) | last=0.580 | vol=$77,214
+     Nara Smith confirmed pregnant in 2026?
+  bid=0.010 ask=0.849 spread=0.839 (195.3%) | last=0.005 | vol=$60,803
+     Will Databricks’ market cap be between $100B and $125B at market close on IPO da
+  bid=0.180 ask=0.987 spread=0.807 (138.3%) | last=0.962 | vol=$57,751
+     Over $400M raised on Coinbase in 2026?
+  bid=0.020 ask=0.820 spread=0.800 (190.5%) | last=0.720 | vol=$58,516
+     Will Juan Carlos Valencia Gonzalez be arrested in 2026?
+  bid=0.140 ask=0.940 spread=0.800 (148.1%) | last=0.290 | vol=$240,451
+     Will Hibachi launch a token by December 31, 2026?
+  bid=0.050 ask=0.850 spread=0.800 (177.8%) | last=0.050 | vol=$62,758
+     Over $600M raised on Coinbase in 2026?
+  bid=0.010 ask=0.794 spread=0.784 (195.0%) | last=0.040 | vol=$150,478
+     Abstract FDV above $3B one day after launch?
+  bid=0.130 ask=0.900 spread=0.770 (149.5%) | last=0.350 | vol=$50,314
+     Will Daylight launch a token by September 30, 2026?
+
+=== Top stale (last 가격이 mid에서 5%+ 떨어짐) ===
+  last=0.010 mid=0.974 ↓ 96.4% | vol=$369,685
+     Will Rob Sand win the 2026 Iowa Governor Democratic primary election?
+  last=0.981 mid=0.018 ↑ 96.4% | vol=$310,970
+     Forsen to get signed by an LCK prog org by Jun 30?
+  last=0.989 mid=0.032 ↑ 95.7% | vol=$27,945
+     Will Ivan Demidov win the 2025–2026 NHL Calder Memorial Trophy?
+  last=0.880 mid=0.057 ↑ 82.3% | vol=$12,002
+     Will the Social Democrats (SD) be part of the next Government of Slovenia?
+  last=0.867 mid=0.073 ↑ 79.5% | vol=$12,244
+     Will 3DMAX qualify to IEM Cologne Major 2026? 
+  last=0.100 mid=0.840 ↓ 74.0% | vol=$34,713
+     Will Lindsey Graham be the Republican nominee for Senate in South Carolina?
+  last=0.910 mid=0.215 ↑ 69.5% | vol=$40,606
+     Will Ethena reach $0.32 by December 31, 2026?
+  last=0.250 mid=0.945 ↓ 69.5% | vol=$25,984
+     Will the Slovenian Democratic Party (SDS) be part of the next Government of Slov
+  last=0.250 mid=0.919 ↓ 66.9% | vol=$65,921
+     Will turnout in the first round of the 2026 Peruvian presidential election be be
+  last=0.050 mid=0.710 ↓ 66.0% | vol=$11,126
+     Will India’s 2026 Annual Inflation be at least 4.50%?
+
+  → C:\Projects\polymarket-analyze\results\iter10_spread_arb.json
