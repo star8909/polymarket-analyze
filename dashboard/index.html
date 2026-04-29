@@ -213,6 +213,14 @@ const champions = [
     edge: 0.0775, n_samples: 152, kelly_size: 0.0625, annual_yield: 0.40, risk: "Low",
     score: 88, verdict: "ok", crown: true,
     note: "🏆 152 진짜 차익 — Republican governorships sum=1.178 edge=17.75% vol $665k 등" },
+  { iter: "06", name: "❌ CLOB Calibration", logic: "❌ closed market의 prices-history는 모두 빈 배열 — Polymarket이 settle 후 보관 X",
+    edge: null, n_samples: 0, kelly_size: null, annual_yield: null, risk: "Low",
+    score: 20, verdict: "bad", crown: false,
+    note: "❌ CLOB API 한계 확인. warproxxx 스냅샷 또는 Goldsky 필요" },
+  { iter: "07", name: "🚀 Mean Reversion (활성)", logic: "📐 활성 마켓 ±2σ 극단 1일 변화 → 평균회귀 베팅 후보",
+    edge: 0.10, n_samples: 163, kelly_size: 0.025, annual_yield: 0.30, risk: "Mid",
+    score: 75, verdict: "ok", crown: false,
+    note: "📊 116 NO 후보 + 47 YES 후보. Valve Cache(-46.5%), Elon tweets(+55%) 등 백테스트 검증 필요" },
 ];
 
 let sortKey = "score";

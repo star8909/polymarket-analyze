@@ -1,0 +1,73 @@
+[iter07] 활성 마켓 가격 변화율 분포 → mean reversion 신호
+  [fetch_active] page 0, +500, total=500
+  [fetch_active] page 1, +500, total=1000
+  [fetch_active] page 2, +500, total=1500
+  [fetch_active] page 3, +500, total=2000
+  [fetch_active] page 4, +500, total=2500
+  [fetch_active] page 5, +500, total=3000
+  [fetch_active] page 6, +500, total=3500
+  [fetch_active] page 7, +500, total=4000
+  [fetch_active] page 8, +500, total=4500
+  [fetch_active] page 9, +500, total=5000
+  [fetch_active] page 10, +500, total=5500
+  [fetch_active] page 11, +500, total=6000
+  [fetch_active] page 12, +500, total=6500
+  [fetch_active] page 13, +500, total=7000
+  [fetch_active] page 14, +500, total=7500
+  [fetch_active] page 15, +500, total=8000
+  [fetch_active] page 16, +500, total=8500
+  [fetch_active] page 17, +500, total=9000
+  [fetch_active] page 18, +500, total=9500
+  [fetch_active] page 19, +500, total=10000
+  활성 마켓 (거래량 10k+): 4384
+  last_price 있음: 4370
+
+=== 1일 가격 변화율 분포 ===
+  N=3334, mean=0.96%, std=7.09%
+  +95%: +10.12%
+  -95%: -4.50%
+  +99%: +35.87%
+  -99%: -17.00%
+
+=== Top 1일 가격 +2σ (overshooting) — Mean reversion 후보 (NO 베팅) ===
+  발견: 116개
+    Δ= +55.2% (z=+7.66) | price=0.704 | vol=400,427 | Will Elon Musk post 1040-1079 tweets in April 2026?
+    Δ= +49.6% (z=+6.87) | price=0.013 | vol=13,106 | Will the National Union for Democracy and Progress win the m
+    Δ= +48.8% (z=+6.75) | price=0.002 | vol=129,469 | Will Lew Evans win The Bachelorette Season 22?
+    Δ= +48.7% (z=+6.73) | price=0.011 | vol=41,284 | Will the Union for Central African Renewal win the most seat
+    Δ= +48.6% (z=+6.72) | price=0.006 | vol=29,999 | Will Michael Baba win The Bachelorette Season 22?
+    Δ= +48.3% (z=+6.68) | price=0.002 | vol=20,768 | Will Ronn Perez win The Bachelorette Season 22?
+    Δ= +47.3% (z=+6.54) | price=0.011 | vol=11,668 | Will Breece Hall be traded?
+    Δ= +47.1% (z=+6.51) | price=0.006 | vol=67,047 | Felix Protocol FDV above $2B one day after launch?
+    Δ= +46.6% (z=+6.43) | price=0.027 | vol=15,298 | Will something else than the listed options occur in respect
+    Δ= +46.1% (z=+6.37) | price=0.003 | vol=13,307 | Will Malik Evans win The Bachelorette Season 22?
+    Δ= +46.0% (z=+6.34) | price=0.964 | vol=53,980 | Another critical Cloudflare incident by May 31, 2026?
+    Δ= +46.0% (z=+6.34) | price=0.003 | vol=15,256 | Will Casey Hux win The Bachelorette Season 22?
+    Δ= +45.1% (z=+6.23) | price=0.030 | vol=13,320 | Will Elizabeth Girard be the Republican Nominee for NH-01?
+    Δ= +44.5% (z=+6.15) | price=0.003 | vol=19,530 | Will Freddie Mac’s market cap be between $200B and $250B at 
+    Δ= +44.5% (z=+6.13) | price=0.005 | vol=31,333 | Will Freddie Mac’s market cap be between $150B and $200B at 
+
+=== Top 1일 가격 -2σ (overshooting down) — Mean reversion 후보 (YES 베팅) ===
+  발견: 47개
+    Δ= -46.5% (z=-6.69) | price=0.090 | vol=235,656 | Will Valve add Cache to the Map Pool by June 30, 2026?
+    Δ= -42.5% (z=-6.13) | price=0.320 | vol=52,424 | Will the Bank of Mexico announce no change at the May meetin
+    Δ= -40.2% (z=-5.81) | price=0.543 | vol=46,186 | Will Freddie Mac not IPO by June 30, 2026?
+    Δ= -40.2% (z=-5.80) | price=0.988 | vol=31,441 | Will the United Hearts Movement win the most seats in the 20
+    Δ= -40.1% (z=-5.78) | price=0.703 | vol=10,804 | Will Maxx Crosby play for Las Vegas Raiders next?
+    Δ= -39.3% (z=-5.68) | price=0.958 | vol=16,089 | Over $140B wagered on US sports betting in 2026?
+    Δ= -37.0% (z=-5.35) | price=0.340 | vol=22,656 | Will Trump endorse Andy Barr for KY-Sen by Nov 2 2026 ET?
+    Δ= -37.0% (z=-5.35) | price=0.100 | vol=20,220 | Will Perena launch a token by September 30, 2026?
+    Δ= -36.6% (z=-5.30) | price=0.906 | vol=15,227 | Will Databricks not IPO by June 30, 2026?
+    Δ= -32.8% (z=-4.75) | price=0.819 | vol=10,085 | Will Google reach $355 in April?
+    Δ= -31.8% (z=-4.61) | price=0.860 | vol=12,057 | Will the Democratic Party of Korea win 10 or more seats in S
+    Δ= -31.5% (z=-4.58) | price=0.730 | vol=27,422 | Will Selena Gomez attend Taylor Swift's wedding?
+    Δ= -30.7% (z=-4.46) | price=0.739 | vol=59,149 | Will Felix Protocol launch a token by December 31, 2026?
+    Δ= -29.0% (z=-4.22) | price=0.960 | vol=21,091 | Over $180B wagered on US sports betting in 2026?
+    Δ= -28.5% (z=-4.16) | price=0.207 | vol=381,179 | Will Elon Musk post 1080-1119 tweets in April 2026?
+
+=== Logit 변환 분포 (last_price 2~98%) ===
+  N=2546, mean logit=-1.277, std=1.777
+  skew=0.71, kurtosis=-0.31
+  → Yes 쪽 편향 (시장 평균 가격 ≠ 0.5)
+
+  → C:\Projects\polymarket-analyze\results\iter07_active_distribution.json

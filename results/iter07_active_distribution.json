@@ -1,0 +1,149 @@
+{
+  "n_markets": 4370,
+  "n_extreme_pos_2sigma": 116,
+  "n_extreme_neg_2sigma": 47,
+  "top_extreme_pos": [
+    {
+      "question": "Will Elon Musk post 1040-1079 tweets in April 2026?",
+      "price": 0.704,
+      "change_1d_pct": 55.25,
+      "z": 7.655547112292125,
+      "volume": 400426.8670029988
+    },
+    {
+      "question": "Will the National Union for Democracy and Progress win the most seats in the 202",
+      "price": 0.013,
+      "change_1d_pct": 49.65,
+      "z": 6.865932945713587,
+      "volume": 13106.223198000036
+    },
+    {
+      "question": "Will Lew Evans win The Bachelorette Season 22?",
+      "price": 0.002,
+      "change_1d_pct": 48.8,
+      "z": 6.746080795429346,
+      "volume": 129468.505
+    },
+    {
+      "question": "Will the Union for Central African Renewal win the most seats in the 2025 Centra",
+      "price": 0.011,
+      "change_1d_pct": 48.699999999999996,
+      "z": 6.731980542454728,
+      "volume": 41284.32154599982
+    },
+    {
+      "question": "Will Michael Baba win The Bachelorette Season 22?",
+      "price": 0.006,
+      "change_1d_pct": 48.6,
+      "z": 6.717880289480112,
+      "volume": 29999.278785999995
+    },
+    {
+      "question": "Will Ronn Perez win The Bachelorette Season 22?",
+      "price": 0.002,
+      "change_1d_pct": 48.3,
+      "z": 6.675579530556261,
+      "volume": 20768.013642
+    },
+    {
+      "question": "Will Breece Hall be traded?",
+      "price": 0.011,
+      "change_1d_pct": 47.349999999999994,
+      "z": 6.541627127297402,
+      "volume": 11668.328783999998
+    },
+    {
+      "question": "Felix Protocol FDV above $2B one day after launch?",
+      "price": 0.006,
+      "change_1d_pct": 47.099999999999994,
+      "z": 6.50637649486086,
+      "volume": 67047.09682599998
+    },
+    {
+      "question": "Will something else than the listed options occur in respect to Fed Chair confir",
+      "price": 0.027,
+      "change_1d_pct": 46.550000000000004,
+      "z": 6.428825103500469,
+      "volume": 15297.674726000005
+    },
+    {
+      "question": "Will Malik Evans win The Bachelorette Season 22?",
+      "price": 0.003,
+      "change_1d_pct": 46.1,
+      "z": 6.365373965114694,
+      "volume": 13306.951635999998
+    }
+  ],
+  "top_extreme_neg": [
+    {
+      "question": "Will Valve add Cache to the Map Pool by June 30, 2026?",
+      "price": 0.09,
+      "change_1d_pct": -46.5,
+      "z": -6.691460289380403,
+      "volume": 235655.7530570001
+    },
+    {
+      "question": "Will the Bank of Mexico announce no change at the May meeting?",
+      "price": 0.32,
+      "change_1d_pct": -42.5,
+      "z": -6.127450170395734,
+      "volume": 52423.92574000003
+    },
+    {
+      "question": "Will Freddie Mac not IPO by June 30, 2026?",
+      "price": 0.543,
+      "change_1d_pct": -40.25,
+      "z": -5.810194478466857,
+      "volume": 46186.390465999975
+    },
+    {
+      "question": "Will the United Hearts Movement win the most seats in the 2025 Central African R",
+      "price": 0.988,
+      "change_1d_pct": -40.2,
+      "z": -5.803144351979549,
+      "volume": 31440.886575999884
+    },
+    {
+      "question": "Will Maxx Crosby play for Las Vegas Raiders next?",
+      "price": 0.703,
+      "change_1d_pct": -40.050000000000004,
+      "z": -5.781993972517624,
+      "volume": 10803.926885999996
+    },
+    {
+      "question": "Over $140B wagered on US sports betting in 2026?",
+      "price": 0.958,
+      "change_1d_pct": -39.300000000000004,
+      "z": -5.676242075207998,
+      "volume": 16088.900814
+    },
+    {
+      "question": "Will Trump endorse Andy Barr for KY-Sen by Nov 2 2026 ET?",
+      "price": 0.34,
+      "change_1d_pct": -37.0,
+      "z": -5.351936256791813,
+      "volume": 22656.421416000005
+    },
+    {
+      "question": "Will Perena launch a token by September 30, 2026?",
+      "price": 0.1,
+      "change_1d_pct": -37.0,
+      "z": -5.351936256791813,
+      "volume": 20219.98386500001
+    },
+    {
+      "question": "Will Databricks not IPO by June 30, 2026?",
+      "price": 0.906,
+      "change_1d_pct": -36.6,
+      "z": -5.295535244893347,
+      "volume": 15227.012639
+    },
+    {
+      "question": "Will Google reach $355 in April?",
+      "price": 0.819,
+      "change_1d_pct": -32.75,
+      "z": -4.752675505370602,
+      "volume": 10084.731310000005
+    }
+  ]
+}

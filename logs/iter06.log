@@ -1,0 +1,20 @@
+[iter06] CLOB prices-history → 진짜 calibration
+  종료 마켓 로드: 20000 rows
+  거래량 100k+ 필터: 3289
+  settle 확정: 3237
+  토큰 ID 있음: 3233
+  샘플: 500 (거래량 큰 순)
+
+  CLOB API로 가격 히스토리 fetch (예상 5~10분)...
+    progress: 50/500
+    progress: 100/500
+    progress: 150/500
+    progress: 200/500
+    progress: 250/500
+    progress: 300/500
+    progress: 350/500
+    progress: 400/500
+    progress: 450/500
+
+  closing belief 추출 성공: 0/500
+  ❌ 샘플 너무 적음. CLOB API 응답 문제 가능성.
