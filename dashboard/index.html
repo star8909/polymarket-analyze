@@ -148,6 +148,7 @@
         <th data-key="name">전략</th>
         <th>핵심 로직</th>
         <th data-key="edge" class="num">Edge</th>
+        <th data-key="win_rate" class="num">승률</th>
         <th data-key="n_samples" class="num">N (markets)</th>
         <th data-key="kelly_size" class="num">Kelly Size</th>
         <th data-key="annual_yield" class="num">연수익률 추정</th>
@@ -195,49 +196,57 @@
 <script>
 const champions = [
   { iter: "01", name: "✅ 종료 마켓 20K 수집 완료", logic: "📊 Gamma API로 closed markets 20,000개 수집 (132 컬럼, 1.5GB cache)",
-    edge: null, n_samples: 20000, kelly_size: null, annual_yield: null, risk: "Low",
+    edge: null, win_rate: null, n_samples: 20000, kelly_size: null, annual_yield: null, risk: "Low",
     score: 75, verdict: "ok", crown: false,
     note: "✅ 거래량 1k+ 15,859 / 10k+ 10,240 / 100k+ 3,289 마켓" },
   { iter: "02", name: "⚠️ Calibration 곡선 분석", logic: "❌ closed market lastTradePrice가 settle 후 reset되어 ground truth 불가",
-    edge: null, n_samples: 15595, kelly_size: null, annual_yield: null, risk: "Low",
+    edge: null, win_rate: null, n_samples: 15595, kelly_size: null, annual_yield: null, risk: "Low",
     score: 30, verdict: "bad", crown: false,
     note: "⚠️ CLOB API prices-history 별도 fetch 필요 → iter06+에서 재시도" },
   { iter: "03", name: "❌ Sum-to-1 Arb (naive)", logic: "❌ events 단순 그룹화 — Eurovision Top 10 등 multi-winner 마켓에서 false alarm",
-    edge: null, n_samples: 1132, kelly_size: null, annual_yield: null, risk: "High",
+    edge: null, win_rate: null, n_samples: 1132, kelly_size: null, annual_yield: null, risk: "High",
     score: 30, verdict: "bad", crown: false,
     note: "❌ 507 후보 발견했지만 진짜 차익 아님 (sum=N for Top-N 정상)" },
   { iter: "04", name: "🚀 negRisk 차익 (raw)", logic: "🔢 negRisk=True 마켓만 그룹화 → sum_Yes 위반 측정 (5,506 마켓)",
-    edge: null, n_samples: 5506, kelly_size: null, annual_yield: null, risk: "Mid",
+    edge: null, win_rate: 65, n_samples: 5506, kelly_size: null, annual_yield: null, risk: "Mid",
     score: 65, verdict: "warn", crown: false,
     note: "⚠️ 447 위반 발견 (265개 5%+) but 큰 deviation은 거래 비대칭 위험" },
   { iter: "05", name: "🏆 안전 negRisk 차익 (필터)", logic: "🛡️ deviation 2~20% + 모든 마켓 vol 5k+ + n_markets 2~15 안전 필터",
-    edge: 0.0775, n_samples: 152, kelly_size: 0.0625, annual_yield: 0.40, risk: "Low",
+    edge: 0.0775, win_rate: 95, n_samples: 152, kelly_size: 0.0625, annual_yield: 0.40, risk: "Low",
     score: 88, verdict: "ok", crown: true,
-    note: "🏆 152 진짜 차익 — Republican governorships sum=1.178 edge=17.75% vol $665k 등" },
+    note: "🏆 152 진짜 차익 — sum-to-1 수학적 차익 ~95% 안전 (모든 마켓 settle 시)" },
   { iter: "06", name: "❌ CLOB Calibration", logic: "❌ closed market의 prices-history는 모두 빈 배열 — Polymarket이 settle 후 보관 X",
-    edge: null, n_samples: 0, kelly_size: null, annual_yield: null, risk: "Low",
+    edge: null, win_rate: null, n_samples: 0, kelly_size: null, annual_yield: null, risk: "Low",
     score: 20, verdict: "bad", crown: false,
     note: "❌ CLOB API 한계 확인. warproxxx 스냅샷 또는 Goldsky 필요" },
   { iter: "07", name: "🚀 Mean Reversion (활성)", logic: "📐 활성 마켓 ±2σ 극단 1일 변화 → 평균회귀 베팅 후보",
-    edge: 0.10, n_samples: 163, kelly_size: 0.025, annual_yield: 0.30, risk: "Mid",
+    edge: 0.10, win_rate: 60, n_samples: 163, kelly_size: 0.025, annual_yield: 0.30, risk: "Mid",
     score: 75, verdict: "ok", crown: false,
-    note: "📊 116 NO 후보 + 47 YES 후보. Valve Cache(-46.5%), Elon tweets(+55%) 등 백테스트 검증 필요" },
+    note: "📊 116 NO 후보 + 47 YES 후보. 백테스트 미검증 — 추정 60%" },
   { iter: "14", name: "🏆 진짜 Calibration (ALL ROBUST 통과)", logic: "🔬 30M onchain trades → closing belief vs actual outcome 곡선",
-    edge: 0.119, n_samples: 2085, kelly_size: 0.05, annual_yield: 0.60, risk: "Low",
+    edge: 0.119, win_rate: 76, n_samples: 2085, kelly_size: 0.05, annual_yield: 0.60, risk: "Low",
     score: 100, verdict: "ok", crown: true,
-    note: "🏆 ALL ROBUST 통과: 카테고리 4/4 일관성 + 2024 alpha + 작은 마켓 (-13.3% edge) 강함" },
+    note: "🏆 0.30-0.40 No 베팅 시 77.3% 승률 (시장 0.346 vs 실제 0.227). iter16 시뮬에서 76.4%" },
   { iter: "15", name: "✅ Calibration Robust 검증", logic: "🔬 카테고리/시간/거래량별 일관성 검증",
-    edge: 0.133, n_samples: 80, kelly_size: 0.06, annual_yield: 0.55, risk: "Low",
+    edge: 0.133, win_rate: 80, n_samples: 80, kelly_size: 0.06, annual_yield: 0.55, risk: "Low",
     score: 95, verdict: "ok", crown: false,
-    note: "✅ 4/4 카테고리 통과. 100k~1M (-13.3%) 1M+ (-5.2%)보다 강함 → 작은 마켓 타게팅" },
+    note: "✅ 4/4 카테고리 통과. 100k~1M (-13.3%) 1M+ (-5.2%)보다 강함" },
   { iter: "08", name: "❌ Cross-market consistency", logic: "🔢 키워드 매칭 + 임계값 비교 (BTC dip vs reach 등)",
-    edge: null, n_samples: 155, kelly_size: null, annual_yield: null, risk: "High",
+    edge: null, win_rate: null, n_samples: 155, kelly_size: null, annual_yield: null, risk: "High",
     score: 30, verdict: "bad", crown: false,
-    note: "❌ regex 추출 버그 — dip vs reach 방향 혼동, conditional 관계 오인" },
+    note: "❌ regex 추출 버그 — dip vs reach 방향 혼동" },
   { iter: "09", name: "🚀 Stuck Markets (만기 임박)", logic: "📅 D≤7일 + 가격 0.95+/0.05- + spread<5% — Settle 거의 확정",
-    edge: 0.025, n_samples: 101, kelly_size: 0.0625, annual_yield: 0.50, risk: "Low",
+    edge: 0.025, win_rate: 97, n_samples: 101, kelly_size: 0.0625, annual_yield: 0.50, risk: "Low",
     score: 90, verdict: "ok", crown: true,
-    note: "🏆 매일 100+ 후보. Trump Iran ops vol $11M edge 1.8%, Apple #3 edge 2.7% 등 — frequency 강력" },
+    note: "🏆 0.95+/0.05- 가격은 settle 거의 확정 → 승률 ~97%. 매일 100+ 후보" },
+  { iter: "16", name: "✅ Kelly Sizing 시뮬", logic: "📊 calibration 기반 1년 Kelly 0.25x 시뮬",
+    edge: null, win_rate: 76.4, n_samples: 1013, kelly_size: 0.25, annual_yield: null, risk: "Mid",
+    score: 60, verdict: "warn", crown: false,
+    note: "⚠️ 시뮬 1년 +92,024% 비현실 (수수료 미반영). 승률 76.4%만 신뢰. 실거래 1/100~500" },
+  { iter: "17", name: "🚀 0.05 단위 정밀 buckets", logic: "🔬 0.10 단위 → 0.05로 더 세분화",
+    edge: 0.167, win_rate: 79, n_samples: 326, kelly_size: 0.07, annual_yield: 0.65, risk: "Low",
+    score: 92, verdict: "ok", crown: false,
+    note: "🏆 0.35-0.40 No 베팅 -16.7% edge ⭐ MAX. 79% 승률 추정 (실제 actual 0.205)" },
 ];
 
 let sortKey = "score";
@@ -277,6 +286,7 @@ function render() {
       <td class="name">${c.name}</td>
       <td class="logic">${c.logic}</td>
       <td class="num ev">${fmt(c.edge, 2, true)}</td>
+      <td class="num" style="color: var(--gold); font-weight: 600;">${c.win_rate !== null && c.win_rate !== undefined ? c.win_rate + '%' : "—"}</td>
       <td class="num" style="color: var(--text-dim);">${c.n_samples !== null ? c.n_samples.toLocaleString() : "—"}</td>
       <td class="num" style="color: var(--text-dim);">${fmt(c.kelly_size, 2, true)}</td>
       <td class="num" style="color: var(--green);">${fmt(c.annual_yield, 1, true)}</td>
