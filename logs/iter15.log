@@ -1,0 +1,46 @@
+[iter15] iter14 calibration 카테고리별 robust 검증
+  종료 마켓: 3216
+
+  Reading CSV (chunked)...
+    chunks=10, markets=2379
+    chunks=20, markets=2906
+    chunks=30, markets=2914
+    chunks=40, markets=2930
+    chunks=50, markets=2930
+    chunks=60, markets=2930
+    chunks=70, markets=2930
+    chunks=80, markets=2930
+    chunks=90, markets=2930
+    chunks=100, markets=2930
+    chunks=110, markets=2930
+    chunks=120, markets=2930
+    chunks=130, markets=2930
+    chunks=140, markets=2930
+
+  closing belief 계산...
+  Closing belief: 2085
+
+=== 카테고리별 Calibration (0.30~0.40 bucket — iter14 핵심 발견) ===
+  🚀 politics     | N=  33 | belief=0.349 | actual=0.273 | edge=-0.077
+  🚀 sports       | N=   6 | belief=0.335 | actual=0.000 | edge=-0.335
+  🚀 crypto       | N=   7 | belief=0.359 | actual=0.143 | edge=-0.216
+  🚀 other        | N=  45 | belief=0.341 | actual=0.222 | edge=-0.119
+
+=== 카테고리별 Calibration (0.60~0.70 bucket) ===
+  🚀 politics     | N=  31 | belief=0.650 | actual=0.742 | edge=+0.092
+  🚀 sports       | N=   5 | belief=0.650 | actual=0.800 | edge=+0.150
+  🚀 crypto       | N=  11 | belief=0.649 | actual=0.727 | edge=+0.078
+  🚀 other        | N=  33 | belief=0.642 | actual=0.697 | edge=+0.055
+
+=== 시간대별 (year) calibration drift (0.30~0.40 bucket) ===
+  2024: N=  94 | belief=0.346 | actual=0.234 | edge=-0.112
+
+=== 거래량별 calibration (0.30~0.40 bucket) ===
+  vol 100k-1M     | N=  80 | belief=0.346 | actual=0.212 | edge=-0.133
+  vol 1M+         | N=  17 | belief=0.346 | actual=0.294 | edge=-0.052
+
+=== iter15 종합 ===
+  카테고리 중 0.30~0.40 edge < -5% (No 베팅 strong): 4/4
+  🏆 iter14 calibration robust 통과! 카테고리별 일관성 확인
+
+  → C:\Projects\polymarket-analyze\results\iter15_calibration_robust.json
