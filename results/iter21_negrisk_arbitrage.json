@@ -1,0 +1,128 @@
+{
+  "n_groups": 389,
+  "sum_mean": 1.0220102827763498,
+  "n_arb_over": 67,
+  "n_arb_under": 71,
+  "top_over": [
+    {
+      "group": "will-the-democratic-party-win-",
+      "sum": 109.409,
+      "n_outcomes": 185,
+      "volume": 2360638.370371
+    },
+    {
+      "group": "will-the-republican-party-win-",
+      "sum": 86.723,
+      "n_outcomes": 188,
+      "volume": 2333668.44993
+    },
+    {
+      "group": "spacex-ipo-closing-market-cap-",
+      "sum": 5.773,
+      "n_outcomes": 9,
+      "volume": 1502584.4398020003
+    },
+    {
+      "group": "will-the-democrats-win-the-new",
+      "sum": 4.534,
+      "n_outcomes": 5,
+      "volume": 74727.72425799999
+    },
+    {
+      "group": "will-the-10-year-treasury-yiel",
+      "sum": 3.7119999999999997,
+      "n_outcomes": 10,
+      "volume": 336224.994251
+    },
+    {
+      "group": "will-megaeth-launch-a-token-by",
+      "sum": 2.997,
+      "n_outcomes": 3,
+      "volume": 880669.8314969989
+    },
+    {
+      "group": "will-the-republicans-win-the-o",
+      "sum": 2.94,
+      "n_outcomes": 5,
+      "volume": 91142.93404999998
+    },
+    {
+      "group": "will-solstice-launch-a-token-b",
+      "sum": 2.9,
+      "n_outcomes": 3,
+      "volume": 108684.81337999999
+    },
+    {
+      "group": "will-the-republican-party-hold",
+      "sum": 2.861,
+      "n_outcomes": 28,
+      "volume": 2990333.1687370003
+    },
+    {
+      "group": "will-the-republicans-win-the-a",
+      "sum": 2.71,
+      "n_outcomes": 3,
+      "volume": 18672.636926
+    },
+    {
+      "group": "will-venezuelan-crude-oil-prod",
+      "sum": 2.64,
+      "n_outcomes": 7,
+      "volume": 91163.177608
+    },
+    {
+      "group": "will-the-republicans-win-the-m",
+      "sum": 2.561,
+      "n_outcomes": 9,
+      "volume": 288223.80214700004
+    },
+    {
+      "group": "will-nvidia-be-the-largest-com",
+      "sum": 2.559,
+      "n_outcomes": 3,
+      "volume": 3716016.8906389894
+    },
+    {
+      "group": "openai-ipo-closing-market-cap-",
+      "sum": 2.47,
+      "n_outcomes": 5,
+      "volume": 1482696.4632130004
+    },
+    {
+      "group": "will-google-gemini-score-at-le",
+      "sum": 2.44,
+      "n_outcomes": 7,
+      "volume": 294364.3063869999
+    },
+    {
+      "group": "will-the-republicans-win-the-t",
+      "sum": 2.27,
+      "n_outcomes": 3,
+      "volume": 120892.86770400003
+    },
+    {
+      "group": "will-inflation-reach-more-than",
+      "sum": 2.2430000000000003,
+      "n_outcomes": 6,
+      "volume": 501366.63236699934
+    },
+    {
+      "group": "will-the-reserve-bank-of-austr",
+      "sum": 2.036,
+      "n_outcomes": 6,
+      "volume": 62814.037438000014
+    },
+    {
+      "group": "nhl-2025-26-calder-memorial-tr",
+      "sum": 2.015,
+      "n_outcomes": 18,
+      "volume": 426631.283238
+    },
+    {
+      "group": "will-fuerza-popular-fp-win-the",
+      "sum": 1.9769999999999999,
+      "n_outcomes": 2,
+      "volume": 98115.22725399988
+    }
+  ]
+}

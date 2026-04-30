@@ -1,0 +1,97 @@
+[iter21] negRisk arbitrage — sum-to-1 deviation
+  [fetch_active] page 0, +500, total=500
+  [fetch_active] page 1, +500, total=1000
+  [fetch_active] page 2, +500, total=1500
+  [fetch_active] page 3, +500, total=2000
+  [fetch_active] page 4, +500, total=2500
+  [fetch_active] page 5, +500, total=3000
+  [fetch_active] page 6, +500, total=3500
+  [fetch_active] page 7, +500, total=4000
+  [fetch_active] page 8, +500, total=4500
+  [fetch_active] page 9, +500, total=5000
+  [fetch_active] page 10, +500, total=5500
+  [fetch_active] page 11, +500, total=6000
+  [fetch_active] page 12, +500, total=6500
+  [fetch_active] page 13, +500, total=7000
+  [fetch_active] page 14, +500, total=7500
+  [fetch_active] page 15, +500, total=8000
+  [fetch_active] page 16, +500, total=8500
+  [fetch_active] page 17, +500, total=9000
+  [fetch_active] page 18, +500, total=9500
+  [fetch_active] page 19, +500, total=10000
+  ⚠️ event 그룹 컬럼 없음 → ticker prefix로 추정
+  활성 마켓: 5427, group 컬럼: group_key
+
+  Multi-outcome groups: 389
+  price_sum 평균: 1.022
+  price_sum std: 7.071
+
+=== Top sum > 1.05 (short all - arbitrage) ===
+  발견: 67개
+    sum=109.409 (185 outcomes) vol=$ 2,360,638  negRisk
+      will-the-democratic-party-win-
+    sum=86.723 (188 outcomes) vol=$ 2,333,668  negRisk
+      will-the-republican-party-win-
+    sum=5.773 (9 outcomes) vol=$ 1,502,584  
+      spacex-ipo-closing-market-cap-
+    sum=4.534 (5 outcomes) vol=$    74,728  negRisk
+      will-the-democrats-win-the-new
+    sum=3.712 (10 outcomes) vol=$   336,225  
+      will-the-10-year-treasury-yiel
+    sum=2.997 (3 outcomes) vol=$   880,670  
+      will-megaeth-launch-a-token-by
+    sum=2.940 (5 outcomes) vol=$    91,143  negRisk
+      will-the-republicans-win-the-o
+    sum=2.900 (3 outcomes) vol=$   108,685  
+      will-solstice-launch-a-token-b
+    sum=2.861 (28 outcomes) vol=$ 2,990,333  negRisk
+      will-the-republican-party-hold
+    sum=2.710 (3 outcomes) vol=$    18,673  negRisk
+      will-the-republicans-win-the-a
+    sum=2.640 (7 outcomes) vol=$    91,163  
+      will-venezuelan-crude-oil-prod
+    sum=2.561 (9 outcomes) vol=$   288,224  negRisk
+      will-the-republicans-win-the-m
+    sum=2.559 (3 outcomes) vol=$ 3,716,017  negRisk
+      will-nvidia-be-the-largest-com
+    sum=2.470 (5 outcomes) vol=$ 1,482,696  
+      openai-ipo-closing-market-cap-
+    sum=2.440 (7 outcomes) vol=$   294,364  
+      will-google-gemini-score-at-le
+
+=== Top sum < 0.95 with 3+ outcomes (long all - arbitrage) ===
+  발견: 71개
+    sum=0.004 (3 outcomes) vol=$   294,090  negRisk
+      bank-of-england-decreases-inte
+    sum=0.004 (4 outcomes) vol=$   609,336  negRisk
+      will-how-to-make-a-killing-sco
+    sum=0.004 (3 outcomes) vol=$    89,798  negRisk
+      will-the-nationalist-congress-
+    sum=0.009 (3 outcomes) vol=$ 3,854,014  negRisk
+      will-amazon-be-the-largest-com
+    sum=0.009 (3 outcomes) vol=$    86,500  negRisk
+      will-marisol-prez-tello-finish
+    sum=0.009 (3 outcomes) vol=$ 3,960,692  negRisk
+      will-saudi-aramco-be-the-large
+    sum=0.010 (3 outcomes) vol=$ 4,020,905  negRisk
+      will-tesla-be-the-largest-comp
+    sum=0.011 (3 outcomes) vol=$ 3,739,464  negRisk
+      will-microsoft-be-the-largest-
+    sum=0.012 (3 outcomes) vol=$ 7,814,502  negRisk
+      will-carlos-roberto-massa-jnio
+    sum=0.013 (3 outcomes) vol=$    66,001  negRisk
+      will-fiorella-molinelli-finish
+    sum=0.015 (3 outcomes) vol=$    64,669  negRisk
+      will-roberto-chiabra-finish-in
+    sum=0.015 (3 outcomes) vol=$ 2,040,797  negRisk
+      will-christopher-waller-be-con
+    sum=0.015 (3 outcomes) vol=$    70,102  negRisk
+      will-vladimir-cerrn-finish-in-
+    sum=0.016 (3 outcomes) vol=$    56,875  negRisk
+      will-bsw-win-the-most-seats-in
+    sum=0.019 (3 outcomes) vol=$99,578,139  negRisk
+      will-kim-kardashian-win-the-20
+
+  Sum > 1.05 평균 edge: +78.66% (short)
+
+  → C:\Projects\polymarket-analyze\results\iter21_negrisk_arbitrage.json
