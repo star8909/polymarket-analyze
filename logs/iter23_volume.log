@@ -1,0 +1,70 @@
+C:\Projects\polymarket-analyze\iters\iter23_volume_weighted.py:49: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  for b, sub in high.groupby('bucket'):
+[iter23] Volume-weighted calibration
+  [fetch_active] page 0, +500, total=500
+  [fetch_active] page 1, +500, total=1000
+  [fetch_active] page 2, +500, total=1500
+  [fetch_active] page 3, +500, total=2000
+  [fetch_active] page 4, +500, total=2500
+  [fetch_active] page 5, +500, total=3000
+  [fetch_active] page 6, +500, total=3500
+  [fetch_active] page 7, +500, total=4000
+  [fetch_active] page 8, +500, total=4500
+  [fetch_active] page 9, +500, total=5000
+  [fetch_active] page 10, +500, total=5500
+  [fetch_active] page 11, +500, total=6000
+  [fetch_active] page 12, +500, total=6500
+  [fetch_active] page 13, +500, total=7000
+  [fetch_active] page 14, +500, total=7500
+  [fetch_active] page 15, +500, total=8000
+  [fetch_active] page 16, +500, total=8500
+  [fetch_active] page 17, +500, total=9000
+  [fetch_active] page 18, +500, total=9500
+  [fetch_active] page 19, +500, total=10000
+  활성 마켓: 2876
+
+=== Volume_24h 분포 ===
+  vol24h mean: $8,005
+  vol24h median: $55
+  vol24h 90%: $6,458
+  vol24h max: $5,821,653
+
+=== High-vol 마켓 (vol_24h > $50k) calibration ===
+  N=70
+  (0.0, 0.05]          N=  28 mean=0.024 sum_vol_24h=$  11.08M
+  (0.05, 0.1]          N=  12 mean=0.081 sum_vol_24h=$   1.99M
+  (0.1, 0.2]           N=   8 mean=0.159 sum_vol_24h=$   1.09M
+  (0.2, 0.3]           N=   1 mean=0.290 sum_vol_24h=$   0.72M
+  (0.3, 0.4]           N=   4 mean=0.340 sum_vol_24h=$   0.92M
+  (0.4, 0.5]           N=   2 mean=0.470 sum_vol_24h=$   0.17M
+  (0.5, 0.6]           N=   5 mean=0.537 sum_vol_24h=$   0.40M
+  (0.6, 0.7]           N=   2 mean=0.655 sum_vol_24h=$   0.40M
+  (0.7, 0.8]           N=   2 mean=0.732 sum_vol_24h=$   0.14M
+  (0.8, 0.9]           N=   2 mean=0.860 sum_vol_24h=$   0.27M
+  (0.9, 0.95]          N=   2 mean=0.940 sum_vol_24h=$   0.40M
+  (0.95, 1.0]          N=   2 mean=0.965 sum_vol_24h=$   0.42M
+
+=== Vol vs 1d price change ===
+  |Δprice| vs vol_24h corr: 0.018
+  Institutional gauge (high vol + stable price): N=37
+  Mid-priced (0.30-0.50) high-vol stable: N=2
+    avg price: 0.395
+     price=0.310 vol_24h=$   113,425  Will PSG win the 2025–26 Champions League?
+     price=0.480 vol_24h=$   110,473  Will the Bharatiya Janata Party (BJP) win the most seats in 
+
+=== Coin-flip 영역 (0.45-0.55) high vol ===
+  N=6
+    price=0.520 1d Δ=+1.0% vol_24h=$   160,941
+      Will the Oklahoma City Thunder win the 2026 NBA Finals?
+    price=0.540 1d Δ=+1.0% vol_24h=$    56,653
+      Will Bitcoin dip to $55,000 by December 31, 2026?
+    price=0.460 1d Δ=+7.5% vol_24h=$    60,312
+      Gensyn FDV above $600M one day after launch?
+    price=0.522 1d Δ=+4.0% vol_24h=$    83,777
+      Will the All India Trinamool Congress (AITC) win the most seats in the 2026 West
+    price=0.480 1d Δ=-3.8% vol_24h=$   110,473
+      Will the Bharatiya Janata Party (BJP) win the most seats in the 2026 West Bengal
+    price=0.530 1d Δ=-7.5% vol_24h=$    50,297
+      Trump announces end of military operations against Iran by June 30th?
+
+  → C:\Projects\polymarket-analyze\results\iter23_volume_weighted.json
