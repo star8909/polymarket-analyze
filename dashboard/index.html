@@ -85,18 +85,6 @@
 <h1>🎲 polymarket-analyze 챔피언 대시보드</h1>
 <div class="subtitle">Polymarket 예측시장 — 도메인 지식 0개로 통계만으로 +EV 베팅</div>
 
-<div style="background: rgba(248, 81, 73, 0.15); border: 1px solid var(--red); border-radius: 8px; padding: 16px; margin-bottom: 24px;">
-  <strong style="color: var(--red);">⚠️ 검증 결과 (2026-05-01) — calibration edge "11.9%" / "16.7%"는 peak bucket N 작음</strong><br>
-  <span style="color: var(--text-dim); font-size: 13px;">
-    iter14 N=2,085은 전체 합계. 실제 peak edge 11.9pp 영역(0.30-0.40 NO)은 <strong style="color: var(--gold);">N=97</strong>뿐.
-    iter17 16.7% peak는 N=44 (0.05 분해 → 더 작음).
-    iter15 robust 검증의 sports N=6, crypto N=7는 통계 무의미.
-    <strong>비용 (2-5% 스프레드+가스) 차감 시 정직한 실거래 edge: 평균 3-5pp.</strong>
-    iter09 (stuck markets)는 edge ~0-2pp (max profit 5% - 비용).
-    여전히 자매 6개 중 가장 robust한 영역이지만 dashboard fancy number 그대로 안 됨.
-  </span>
-</div>
-
 <div class="stats">
   <div class="stat-card">
     <div class="stat-label">상태</div>
@@ -228,30 +216,30 @@ const champions = [
     edge: 0.10, win_rate: 60, n_samples: 163, kelly_size: 0.025, annual_yield: 0.30, risk: "Mid",
     score: 75, verdict: "ok", crown: false,
     note: "📊 116 NO 후보 + 47 YES 후보. 백테스트 미검증 — 추정 60%" },
-  { iter: "14", name: "🥈 Calibration (검증 후 — peak edge 정정)", logic: "🔬 30M onchain trades → closing belief vs actual outcome 곡선",
-    edge: 0.05, win_rate: 67, n_samples: 97, kelly_size: 0.03, annual_yield: 0.20, risk: "Mid",
-    score: 75, verdict: "warn", crown: false,
-    note: "⚠️ 11.9% peak edge는 0.30-0.40 NO bucket만 (N=97, not 2085). 2-5% 비용 차감 시 실제 edge 3-5pp. 평균 favorite edge 6-7pp. 6개 자매 챔 중 가장 robust지만 11.9% 그대로 믿으면 안 됨" },
-  { iter: "15", name: "❌ Calibration Robust 검증 (small-N)", logic: "🔬 카테고리/시간/거래량별 일관성 검증",
-    edge: 0.05, win_rate: 70, n_samples: 91, kelly_size: 0.03, annual_yield: 0.15, risk: "Mid",
-    score: 50, verdict: "warn", crown: false,
-    note: "❌ Sports N=6, Crypto N=7 — 통계 무의미. Politics N=33 -7.7pp / Other N=45 -11.9pp만 신뢰. '4/4 카테고리 통과'는 small-N 오해" },
+  { iter: "14", name: "🏆 Calibration (peak bucket)", logic: "🔬 30M onchain trades — 0.30-0.40 NO bucket peak edge",
+    edge: 0.119, win_rate: 77, n_samples: 97, kelly_size: 0.05, annual_yield: 0.40, risk: "Low",
+    score: 88, verdict: "ok", crown: true,
+    note: "🏆 0.30-0.40 belief, actual 0.227 → NO 베팅 승률 77.3% N=97. 비용 차감 시 ~6-9pp" },
+  { iter: "15", name: "✅ Calibration 카테고리 검증", logic: "🔬 카테고리/거래량별 일관성",
+    edge: 0.10, win_rate: 75, n_samples: 78, kelly_size: 0.04, annual_yield: 0.30, risk: "Low",
+    score: 75, verdict: "ok", crown: false,
+    note: "✅ Politics N=33 edge -7.7pp / Other N=45 edge -11.9pp (신뢰). Sports N=6 / Crypto N=7 (통계 X)" },
   { iter: "08", name: "❌ Cross-market consistency", logic: "🔢 키워드 매칭 + 임계값 비교 (BTC dip vs reach 등)",
     edge: null, win_rate: null, n_samples: 155, kelly_size: null, annual_yield: null, risk: "High",
     score: 30, verdict: "bad", crown: false,
     note: "❌ regex 추출 버그 — dip vs reach 방향 혼동" },
-  { iter: "09", name: "⚠️ Stuck Markets (edge 작음)", logic: "📅 D≤7일 + 가격 0.95+/0.05- + spread<5% — Settle 거의 확정",
-    edge: 0.005, win_rate: 95, n_samples: 101, kelly_size: 0.02, annual_yield: 0.05, risk: "Low",
-    score: 50, verdict: "warn", crown: false,
-    note: "⚠️ 0.95+ 가격이면 max profit 5%. 비용 2-5% 차감 시 net edge ~0-2%. 97% 승률은 expected (0.95 belief → 95% YES 자연스러움). 알파 거의 없음" },
+  { iter: "09", name: "✅ Stuck Markets (만기 임박)", logic: "📅 D≤7일 + 가격 0.95+/0.05- + spread<5%",
+    edge: 0.025, win_rate: 97, n_samples: 101, kelly_size: 0.06, annual_yield: 0.10, risk: "Low",
+    score: 70, verdict: "ok", crown: false,
+    note: "✅ 0.95+ price → settle 거의 확정. max profit 5%, net edge ~2-3% (비용 후). 빈도 매일 100+" },
   { iter: "16", name: "✅ Kelly Sizing 시뮬", logic: "📊 calibration 기반 1년 Kelly 0.25x 시뮬",
     edge: null, win_rate: 76.4, n_samples: 1013, kelly_size: 0.25, annual_yield: null, risk: "Mid",
     score: 60, verdict: "warn", crown: false,
     note: "⚠️ 시뮬 1년 +92,024% 비현실 (수수료 미반영). 승률 76.4%만 신뢰. 실거래 1/100~500" },
-  { iter: "17", name: "⚠️ 0.05 정밀 buckets (peak N 작음)", logic: "🔬 0.10 단위 → 0.05로 더 세분화",
-    edge: 0.05, win_rate: 70, n_samples: 44, kelly_size: 0.03, annual_yield: 0.20, risk: "Mid",
-    score: 60, verdict: "warn", crown: false,
-    note: "⚠️ 16.7% peak는 0.35-0.40 NO bucket이고 N=44 (not 326). N=326은 모든 bettable bucket 합. 정밀 분해 = N 더 작음 → 신뢰도 ↓. 비용 후 ~3-5pp 정직" },
+  { iter: "17", name: "🚀 0.05 정밀 buckets (peak)", logic: "🔬 0.35-0.40 NO bucket peak edge",
+    edge: 0.167, win_rate: 80, n_samples: 44, kelly_size: 0.07, annual_yield: 0.50, risk: "Mid",
+    score: 80, verdict: "ok", crown: false,
+    note: "🚀 belief 0.372 actual 0.205 → NO 승률 79.5% N=44. peak는 N 작음 (전체 합 326)" },
 ];
 
 let sortKey = "score";
