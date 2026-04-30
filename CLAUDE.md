@@ -8,10 +8,10 @@
 시장 가격 = 시장이 매기는 확률. 시장 가격 ≠ 진짜 확률인 마켓을 체계적으로 찾아 +EV 베팅.
 
 자매 프로젝트 (모두 같은 방법론 — CVaR + GMM + walk-forward + 분포 기반):
-- `c:\Projects\ProbabilityDistribution` — 암호화폐 (현물 + funding 차익)
-- `c:\Projects\EquityDistribution` — 한투 해외주식 (R70 메인 챔, BT 11.74)
-- `c:\Projects\FuturesDistribution` — 한투 해외선물옵션 (Agri momentum baseline)
-- `c:\Projects\polymarket-analyze` — Polymarket 예측시장 (이 프로젝트)
+- `c:\Projects\Quant\ProbabilityDistribution` — 암호화폐 (현물 + funding 차익)
+- `c:\Projects\Quant\EquityDistribution` — 한투 해외주식 (R70 메인 챔, BT 11.74)
+- `c:\Projects\Quant\FuturesDistribution` — 한투 해외선물옵션 (Agri momentum baseline)
+- `c:\Projects\Quant\polymarket-analyze` — Polymarket 예측시장 (이 프로젝트)
 
 ## 핵심 가설
 
