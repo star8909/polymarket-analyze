@@ -241,6 +241,17 @@ const champions = [
     edge: 0.167, sharpe: 2.93, win_rate: 80, n_samples: 44, kelly_size: 0.08, annual_yield: 0.65, risk: "Low",
     score: 92, verdict: "ok", crown: true,
     note: "🏆 belief 0.372 actual 0.205 → NO 79.5%. per-trade Sh 0.414, 50/yr (narrow bucket) → annual 2.93" },
+  // === verified sweep + diverse + no_ddlock 자동 갱신 ===
+  { iter: "V1", name: "longshots_only", logic: "verified qBkt=3 N=343 edge=8.61pp", edge: 0.08608608299788287, sharpe: 2.84, win_rate: 75, n_samples: 343, kelly_size: 0.05, annual_yield: 0.43043041498941437, risk: "Low", score: 93, verdict: "ok", crown: true, note: "verified r25" },
+  { iter: "V2", name: "strict_min_n80", logic: "verified qBkt=5 N=533 edge=7.68pp", edge: 0.07679980316505303, sharpe: 2.84, win_rate: 75, n_samples: 533, kelly_size: 0.05, annual_yield: 0.38399901582526513, risk: "Low", score: 88, verdict: "ok", crown: false, note: "verified r23" },
+  { iter: "V3", name: "moderate_min_n60", logic: "verified qBkt=5 N=533 edge=7.68pp", edge: 0.07679980316505303, sharpe: 2.84, win_rate: 75, n_samples: 533, kelly_size: 0.05, annual_yield: 0.38399901582526513, risk: "Low", score: 88, verdict: "ok", crown: false, note: "verified r26" },
+  { iter: "V4", name: "balanced_n70_e4pp", logic: "verified qBkt=5 N=533 edge=7.68pp", edge: 0.07679980316505303, sharpe: 2.84, win_rate: 75, n_samples: 533, kelly_size: 0.05, annual_yield: 0.38399901582526513, risk: "Low", score: 88, verdict: "ok", crown: false, note: "verified r30" },
+  { iter: "V5", name: "all_buckets_min_n50", logic: "verified qBkt=6 N=600 edge=7.20pp", edge: 0.0720478716486327, sharpe: 2.84, win_rate: 75, n_samples: 600, kelly_size: 0.05, annual_yield: 0.3602393582431635, risk: "Low", score: 86, verdict: "ok", crown: false, note: "verified r21" },
+  { iter: "V6", name: "permissive_n40_e2pp", logic: "verified qBkt=6 N=600 edge=7.20pp", edge: 0.0720478716486327, sharpe: 2.84, win_rate: 75, n_samples: 600, kelly_size: 0.05, annual_yield: 0.3602393582431635, risk: "Low", score: 86, verdict: "ok", crown: false, note: "verified r28" },
+  { iter: "V7", name: "strict_n100_e7pp", logic: "verified qBkt=1 N=162 edge=7.14pp", edge: 0.07144649104116874, sharpe: 2.73, win_rate: 75, n_samples: 162, kelly_size: 0.05, annual_yield: 0.3572324552058437, risk: "Mid", score: 85, verdict: "ok", crown: false, note: "verified r29" },
+  { iter: "V8", name: "high_n_min_n100", logic: "verified qBkt=2 N=267 edge=6.34pp", edge: 0.06335254658807626, sharpe: 2.73, win_rate: 75, n_samples: 267, kelly_size: 0.05, annual_yield: 0.3167627329403813, risk: "Low", score: 81, verdict: "ok", crown: false, note: "verified r22" },
+  { iter: "V9", name: "very_high_n_min_100_edge_5pp", logic: "verified qBkt=2 N=267 edge=6.34pp", edge: 0.06335254658807626, sharpe: 2.73, win_rate: 75, n_samples: 267, kelly_size: 0.05, annual_yield: 0.3167627329403813, risk: "Low", score: 81, verdict: "ok", crown: false, note: "verified r27" },
+  { iter: "V10", name: "favorites_only", logic: "verified qBkt=2 N=190 edge=6.00pp", edge: 0.060035624308944414, sharpe: 1.59, win_rate: 75, n_samples: 190, kelly_size: 0.05, annual_yield: 0.30017812154472207, risk: "Mid", score: 80, verdict: "ok", crown: false, note: "verified r24" }
 ];
 
 let sortKey = "score";
