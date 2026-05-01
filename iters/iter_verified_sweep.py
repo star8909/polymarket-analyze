@@ -1,8 +1,4 @@
-"""verified sweep — polymarket calibration bucket-level edge.
-
-각 round마다 다른 bucket size + filter (volume / time / category).
-peak edge with proper N reporting.
-"""
+"""verified sweep — 50 configs (polymarket calibration + MDD MC)."""
 from __future__ import annotations
 
 import sys
@@ -18,111 +14,149 @@ import pandas as pd
 from src.config import RESULTS_DIR
 
 
+def load_buckets():
+    src = RESULTS_DIR / "iter14_real_calibration.json"
+    if not src.exists():
+        return []
+    return json.loads(src.read_text(encoding="utf-8"))["calibration_buckets"]
+
+
+def per_trade_sharpe(belief, actual, side):
+    if side == "NO":
+        p_no = 1 - belief
+        p_win = 1 - actual
+        if p_no <= 0 or p_no >= 1: return 0
+        payoff = 1.0 / p_no - 1
+    else:
+        p_yes = belief
+        p_win = actual
+        if p_yes <= 0 or p_yes >= 1: return 0
+        payoff = 1.0 / p_yes - 1
+    mean = p_win * payoff - (1 - p_win)
+    var = p_win * (payoff - mean) ** 2 + (1 - p_win) * (-1 - mean) ** 2
+    std = np.sqrt(var) if var > 0 else 1
+    return mean / std if std > 0 else 0
+
+
+def filter_buckets(buckets, edge_min=0.03, n_min=50, side=None,
+                   belief_min=0.0, belief_max=1.0):
+    out = []
+    for b in buckets:
+        belief = b["avg_belief"]; actual = b["actual_yes"]
+        edge = belief - actual
+        if abs(edge) < edge_min or b["n"] < n_min:
+            continue
+        if not (belief_min <= belief <= belief_max):
+            continue
+        s = "NO" if edge > 0 else "YES"
+        if side and s != side: continue
+        out.append({"belief": belief, "actual": actual, "n": b["n"], "side": s,
+                    "edge_pp": edge * 100,
+                    "per_trade_sh": per_trade_sharpe(belief, actual, s)})
+    return out
+
+
+def simulate_mdd(qualified, kelly=0.25, n_sims=500, seed=42):
+    """Monte Carlo MDD."""
+    if not qualified: return None
+    bets = []
+    for q in qualified:
+        if q["side"] == "NO":
+            p_win = 1 - q["actual"]; payoff = 1.0 / (1 - q["belief"]) - 1
+        else:
+            p_win = q["actual"]; payoff = 1.0 / q["belief"] - 1
+        for _ in range(q["n"]):
+            bets.append((p_win, payoff))
+    if not bets: return None
+    n = len(bets)
+    mdds, finals = [], []
+    for s in range(n_sims):
+        rng = np.random.RandomState(seed + s)
+        order = rng.permutation(n)
+        eq = 1.0; peak = 1.0; max_dd = 0.0
+        for idx in order:
+            p_win, payoff = bets[idx]
+            if rng.random() < p_win:
+                eq *= (1 + kelly * payoff)
+            else:
+                eq *= (1 - kelly)
+            peak = max(peak, eq)
+            max_dd = min(max_dd, eq / peak - 1)
+        mdds.append(max_dd); finals.append(eq - 1)
+    mdds = np.array(mdds); finals = np.array(finals)
+    return {
+        "n_bets": n, "n_sims": n_sims, "kelly_frac": kelly,
+        "mdd_mean_pct": float(mdds.mean() * 100),
+        "mdd_p5_pct": float(np.percentile(mdds, 5) * 100),
+        "mdd_p50_pct": float(np.percentile(mdds, 50) * 100),
+        "mdd_worst_pct": float(mdds.min() * 100),
+        "final_mean_pct": float(finals.mean() * 100),
+        "final_p50_pct": float(np.percentile(finals, 50) * 100),
+        "win_pct": float((finals > 0).mean() * 100),
+    }
+
+
+# 50 configs: filter combinations × Kelly fraction
+CONFIGS = []
+filters = [
+    ("longshots_e5", {"edge_min": 0.05, "n_min": 80, "belief_max": 0.5}),
+    ("longshots_e7", {"edge_min": 0.07, "n_min": 80, "belief_max": 0.5}),
+    ("favorites_e5", {"edge_min": 0.05, "n_min": 80, "belief_min": 0.5}),
+    ("favorites_e7", {"edge_min": 0.07, "n_min": 80, "belief_min": 0.5}),
+    ("balanced_e4", {"edge_min": 0.04, "n_min": 70}),
+    ("balanced_e5", {"edge_min": 0.05, "n_min": 70}),
+    ("strict_e7_n100", {"edge_min": 0.07, "n_min": 100}),
+    ("strict_e8_n100", {"edge_min": 0.08, "n_min": 100}),
+    ("permissive_e3_n40", {"edge_min": 0.03, "n_min": 40}),
+    ("very_strict_n200", {"edge_min": 0.05, "n_min": 200}),
+]
+kellys = [0.05, 0.10, 0.15, 0.25, 0.50]
+for f_name, f in filters:
+    for k in kellys:
+        CONFIGS.append({"name": f"{f_name}_k{int(k*100)}", "filt": f, "kelly": k})
+
+assert len(CONFIGS) == 50
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--round", type=int, default=1)
     args = ap.parse_args()
     rd = args.round
 
-    # iter14_real_calibration.json 데이터 활용 (이미 계산됨)
-    src = RESULTS_DIR / "iter14_real_calibration.json"
-    if not src.exists():
-        print(f"  source not found: {src}")
-        return
-
-    base_data = json.loads(src.read_text(encoding="utf-8"))
-    buckets = base_data["calibration_buckets"]
-
-    configs = [
-        {"name": "all_buckets_min_n50",   "min_n": 50,  "min_edge": 0.03},
-        {"name": "high_n_min_n100",       "min_n": 100, "min_edge": 0.03},
-        {"name": "strict_min_n80",        "min_n": 80,  "min_edge": 0.05},
-        {"name": "favorites_only",        "min_n": 80,  "min_edge": 0.03, "favor_above_05": True},
-        {"name": "longshots_only",        "min_n": 80,  "min_edge": 0.03, "favor_below_05": True},
-        {"name": "moderate_min_n60",      "min_n": 60,  "min_edge": 0.04},
-        {"name": "very_high_n_min_100_edge_5pp", "min_n": 100, "min_edge": 0.05},
-        {"name": "permissive_n40_e2pp",   "min_n": 40,  "min_edge": 0.02},
-        {"name": "strict_n100_e7pp",      "min_n": 100, "min_edge": 0.07},
-        {"name": "balanced_n70_e4pp",     "min_n": 70,  "min_edge": 0.04},
-    ]
-    cfg = configs[(rd - 1) % len(configs)]
+    cfg = CONFIGS[(rd - 1) % len(CONFIGS)]
     print(f"[round {rd}] {cfg['name']}")
 
-    qualified = []
-    for b in buckets:
-        n = b["n"]
-        belief = b["avg_belief"]
-        actual = b["actual_yes"]
-        edge = belief - actual  # NO bet edge (positive = NO win more than market thinks)
-        if abs(edge) < cfg["min_edge"]:
-            continue
-        if n < cfg["min_n"]:
-            continue
-        if cfg.get("favor_above_05") and belief < 0.5:
-            continue
-        if cfg.get("favor_below_05") and belief >= 0.5:
-            continue
-        qualified.append({
-            "bin": b["bin"],
-            "n": n,
-            "belief": belief,
-            "actual": actual,
-            "edge_pp": edge * 100,
-            "side": "NO" if edge > 0 else "YES",
-        })
+    buckets = load_buckets()
+    if not buckets:
+        return
 
-    total_n = sum(q["n"] for q in qualified)
-    avg_edge_pp = float(np.mean([abs(q["edge_pp"]) for q in qualified])) if qualified else 0
-    weighted_edge_pp = (sum(q["n"] * abs(q["edge_pp"]) for q in qualified) / total_n) if total_n > 0 else 0
-
-    # Per-trade Sharpe estimate
-    if qualified:
-        # Pick peak bucket
-        peak = max(qualified, key=lambda q: abs(q["edge_pp"]))
-        # Per-trade Sharpe for peak
-        b = peak["belief"]
-        a = peak["actual"]
-        if peak["side"] == "NO":
-            p_no = 1 - b
-            p_win = 1 - a
-            payoff = (1 / p_no) - 1
-            mean = p_win * payoff - (1 - p_win)
-            var = p_win * (payoff - mean)**2 + (1 - p_win) * (-1 - mean)**2
-            std = np.sqrt(var)
-            per_trade_sharpe = mean / std if std > 0 else 0
-        else:  # YES
-            p_yes = b
-            p_win = a
-            payoff = (1 / p_yes) - 1
-            mean = p_win * payoff - (1 - p_win)
-            var = p_win * (payoff - mean)**2 + (1 - p_win) * (-1 - mean)**2
-            std = np.sqrt(var)
-            per_trade_sharpe = mean / std if std > 0 else 0
-        annual_sharpe = per_trade_sharpe * np.sqrt(min(total_n, 100))
+    qualified = filter_buckets(buckets, **cfg["filt"])
+    if not qualified:
+        result = {"round": rd, "strategy": cfg["name"], "skipped": True, "params": cfg}
     else:
-        peak = None
-        per_trade_sharpe = 0
-        annual_sharpe = 0
-
-    result = {
-        "round": rd, "config": cfg["name"], "params": cfg,
-        "n_qualified_buckets": len(qualified),
-        "total_n_trades": total_n,
-        "avg_edge_pp": avg_edge_pp,
-        "weighted_edge_pp": weighted_edge_pp,
-        "peak_bucket": peak,
-        "per_trade_sharpe": float(per_trade_sharpe),
-        "annual_sharpe_100yr": float(annual_sharpe),
-        "qualified_buckets": qualified,
-    }
-    print(f"  qualified={len(qualified)} total_N={total_n} avg_edge={avg_edge_pp:.2f}pp "
-          f"weighted={weighted_edge_pp:.2f}pp Sh(per-trade)={per_trade_sharpe:.2f} annual={annual_sharpe:.2f}")
-    if peak:
-        print(f"  peak: {peak['bin']} N={peak['n']} edge={peak['edge_pp']:+.2f}pp side={peak['side']}")
+        total_n = sum(q["n"] for q in qualified)
+        weighted_edge = sum(q["n"] * abs(q["edge_pp"]) for q in qualified) / total_n
+        weighted_sh = sum(q["n"] * q["per_trade_sh"] for q in qualified) / total_n
+        mc = simulate_mdd(qualified, kelly=cfg["kelly"])
+        result = {
+            "round": rd, "strategy": cfg["name"], "params": cfg,
+            "n_qualified_buckets": len(qualified),
+            "total_n_trades": total_n,
+            "weighted_edge_pp": weighted_edge,
+            "per_trade_sharpe": weighted_sh,
+            "annual_sharpe_100yr": weighted_sh * np.sqrt(min(total_n, 100)),
+            "mc_mdd": mc,
+        }
+        print(f"  bkts={len(qualified)} N={total_n} edge={weighted_edge:.2f}pp "
+              f"per-trade Sh={weighted_sh:.3f}")
+        if mc:
+            print(f"  MC MDD: mean={mc['mdd_mean_pct']:.1f}% p5={mc['mdd_p5_pct']:.1f}% "
+                  f"worst={mc['mdd_worst_pct']:.1f}%")
+            print(f"  MC Final: mean={mc['final_mean_pct']:+.0f}% win={mc['win_pct']:.0f}%")
 
     out_path = RESULTS_DIR / f"iter_verified_sweep_r{rd}.json"
     out_path.write_text(json.dumps(result, indent=2, default=str, ensure_ascii=False), encoding="utf-8")
-    print(f"  → {out_path.name}")
 
 
 if __name__ == "__main__":
