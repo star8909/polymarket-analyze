@@ -27,6 +27,7 @@ import numpy as np
 import pandas as pd
 
 from src.config import RESULTS_DIR
+from src.mdd_sim import simulate_mdd_realistic
 
 
 def load_buckets():
@@ -66,68 +67,15 @@ def filter_buckets(buckets, edge_min=0.03, n_min=50, side=None,
 
 
 def simulate_mdd(buckets, kelly_frac=0.25, n_sims=1000, seed=42):
-    """Monte Carlo: random 순서 베팅 → equity curve → MDD."""
-    if not buckets:
+    """Monte Carlo: cost-adjusted, block-correlated equity curve → MDD."""
+    out = simulate_mdd_realistic(buckets, kelly=kelly_frac, n_sims=n_sims, seed=seed)
+    if out is None:
         return None
-    rng = np.random.RandomState(seed)
-    # 베팅 한번씩: 각 bucket의 N만큼 베팅 발생 가정
-    bets = []
-    for b in buckets:
-        belief, actual, side = b["belief"], b["actual"], b["side"]
-        # Kelly fraction
-        if side == "NO":
-            p_no = 1 - belief
-            p_win = 1 - actual
-            payoff = 1.0 / p_no - 1
-        else:
-            p_yes = belief
-            p_win = actual
-            payoff = 1.0 / p_yes - 1
-        # Outcomes for this bucket: n bets, each with p_win win probability
-        for _ in range(b["n"]):
-            bets.append((p_win, payoff, kelly_frac))
-
-    if not bets:
-        return None
-    n_bets = len(bets)
-
-    mdds = []
-    final_returns = []
-    for s in range(n_sims):
-        rng2 = np.random.RandomState(seed + s)
-        order = rng2.permutation(n_bets)
-        equity = 1.0
-        peak = 1.0
-        max_dd = 0.0
-        for idx in order:
-            p_win, payoff, k = bets[idx]
-            outcome = rng2.random() < p_win
-            if outcome:
-                equity *= (1 + k * payoff)
-            else:
-                equity *= (1 - k)
-            peak = max(peak, equity)
-            dd = equity / peak - 1
-            max_dd = min(max_dd, dd)
-        mdds.append(max_dd)
-        final_returns.append(equity - 1)
-    mdds = np.array(mdds)
-    finals = np.array(final_returns)
-    return {
-        "n_bets": n_bets,
-        "n_sims": n_sims,
-        "kelly_frac": kelly_frac,
-        "mdd_mean_pct": float(mdds.mean() * 100),
-        "mdd_p5_pct": float(np.percentile(mdds, 5) * 100),
-        "mdd_p50_pct": float(np.percentile(mdds, 50) * 100),
-        "mdd_p95_pct": float(np.percentile(mdds, 95) * 100),
-        "mdd_worst_pct": float(mdds.min() * 100),
-        "final_return_mean_pct": float(finals.mean() * 100),
-        "final_return_p5_pct": float(np.percentile(finals, 5) * 100),
-        "final_return_p50_pct": float(np.percentile(finals, 50) * 100),
-        "final_return_p95_pct": float(np.percentile(finals, 95) * 100),
-        "win_pct": float((finals > 0).mean() * 100),
-    }
+    # backward-compat field names
+    out["final_return_mean_pct"] = out.pop("final_mean_pct")
+    out["final_return_p5_pct"] = out.pop("final_p5_pct")
+    out["final_return_p50_pct"] = out.pop("final_p50_pct")
+    return out
 
 
 CONFIGS = [

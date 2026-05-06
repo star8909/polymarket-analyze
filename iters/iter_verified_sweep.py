@@ -12,6 +12,7 @@ import numpy as np
 import pandas as pd
 
 from src.config import RESULTS_DIR
+from src.mdd_sim import simulate_mdd_realistic
 
 
 def load_buckets():
@@ -57,43 +58,7 @@ def filter_buckets(buckets, edge_min=0.03, n_min=50, side=None,
 
 
 def simulate_mdd(qualified, kelly=0.25, n_sims=500, seed=42):
-    """Monte Carlo MDD."""
-    if not qualified: return None
-    bets = []
-    for q in qualified:
-        if q["side"] == "NO":
-            p_win = 1 - q["actual"]; payoff = 1.0 / (1 - q["belief"]) - 1
-        else:
-            p_win = q["actual"]; payoff = 1.0 / q["belief"] - 1
-        for _ in range(q["n"]):
-            bets.append((p_win, payoff))
-    if not bets: return None
-    n = len(bets)
-    mdds, finals = [], []
-    for s in range(n_sims):
-        rng = np.random.RandomState(seed + s)
-        order = rng.permutation(n)
-        eq = 1.0; peak = 1.0; max_dd = 0.0
-        for idx in order:
-            p_win, payoff = bets[idx]
-            if rng.random() < p_win:
-                eq *= (1 + kelly * payoff)
-            else:
-                eq *= (1 - kelly)
-            peak = max(peak, eq)
-            max_dd = min(max_dd, eq / peak - 1)
-        mdds.append(max_dd); finals.append(eq - 1)
-    mdds = np.array(mdds); finals = np.array(finals)
-    return {
-        "n_bets": n, "n_sims": n_sims, "kelly_frac": kelly,
-        "mdd_mean_pct": float(mdds.mean() * 100),
-        "mdd_p5_pct": float(np.percentile(mdds, 5) * 100),
-        "mdd_p50_pct": float(np.percentile(mdds, 50) * 100),
-        "mdd_worst_pct": float(mdds.min() * 100),
-        "final_mean_pct": float(finals.mean() * 100),
-        "final_p50_pct": float(np.percentile(finals, 50) * 100),
-        "win_pct": float((finals > 0).mean() * 100),
-    }
+    return simulate_mdd_realistic(qualified, kelly=kelly, n_sims=n_sims, seed=seed)
 
 
 # 50 configs: filter combinations × Kelly fraction

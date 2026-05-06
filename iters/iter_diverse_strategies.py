@@ -1,16 +1,8 @@
 """Polymarket 다양한 전략 — calibration 외 다른 alpha 시도.
 
-10가지 전략:
-1. Time decay (만기 임박 시 가격 효과)
-2. Volume-weighted edge (high vol markets only)
-3. Category-specific calibration (politics / sports / other)
-4. Recency bias (최근 closed markets만)
-5. Tail bucket detail (0.05-0.15 / 0.85-0.95)
-6. Mid-range avoid (0.45-0.55 noise filter)
-7. Asymmetric edge (edge_threshold 별 테스트)
-8. NO bet only (longshots)
-9. YES bet only (favorites)
-10. Mixed top-edge (top 5 buckets)
+20가지 전략 (10개 핵심 필터 + 10개 cross-section/asymmetric/extreme):
+1-10. 핵심 longshot/favorite/edge/N 조합
+11-20. 극단 longshot, ultra-conservative, sweet-spot, 비대칭 edge 등
 """
 from __future__ import annotations
 
@@ -92,6 +84,7 @@ def evaluate(buckets, edge_min=0.03, n_min=50, side_filter=None,
 
 
 STRATEGIES = [
+    # 1-10 기본 longshot/favorite/edge 조합
     ("longshots_only_strict",   {"edge_min": 0.05, "n_min": 80, "belief_max": 0.5}),
     ("favorites_only_strict",   {"edge_min": 0.05, "n_min": 80, "belief_min": 0.5}),
     ("tail_buckets_no_only",    {"edge_min": 0.03, "n_min": 50, "belief_max": 0.4, "side_filter": "NO"}),
@@ -102,6 +95,23 @@ STRATEGIES = [
     ("no_side_only",            {"edge_min": 0.04, "n_min": 50, "side_filter": "NO"}),
     ("balanced_med_n100",       {"edge_min": 0.04, "n_min": 100, "belief_min": 0.15, "belief_max": 0.85}),
     ("extreme_edges_n40",       {"edge_min": 0.10, "n_min": 40}),
+    # 11-20 새 전략 (극단/비대칭/sweet-spot/ultra-conservative)
+    ("ultra_longshot_p015",     {"edge_min": 0.04, "n_min": 60, "belief_max": 0.15}),  # 15센트 이하 극단
+    ("ultra_favorite_p085",     {"edge_min": 0.04, "n_min": 60, "belief_min": 0.85}),  # 85센트 이상
+    ("sweet_spot_25_45",        {"edge_min": 0.06, "n_min": 80, "belief_min": 0.25, "belief_max": 0.45}),
+    ("sweet_spot_55_75",        {"edge_min": 0.06, "n_min": 80, "belief_min": 0.55, "belief_max": 0.75}),
+    ("ultra_conservative_n500", {"edge_min": 0.10, "n_min": 500}),  # 가장 robust
+    ("longshot_strong_e12",     {"edge_min": 0.12, "n_min": 50, "belief_max": 0.35}),  # 12pp+ 큰 edge
+    ("favorite_strong_e12",     {"edge_min": 0.12, "n_min": 50, "belief_min": 0.65}),
+    ("asymmetric_no_aggressive",{"edge_min": 0.03, "n_min": 40, "belief_max": 0.5, "side_filter": "NO"}),
+    ("asymmetric_yes_aggressive",{"edge_min": 0.03, "n_min": 40, "belief_min": 0.5, "side_filter": "YES"}),
+    ("max_edge_nominal_n20",    {"edge_min": 0.15, "n_min": 20}),  # 가장 큰 edge만, N 적어도 OK
+    # Tier-S 알파메일 (longshot 깊이별 + N strict)
+    ("deep_longshot_p010_e8",   {"edge_min": 0.08, "n_min": 100, "belief_max": 0.10}),  # 10센트 이하 강한 edge
+    ("longshot_p020_n300",      {"edge_min": 0.06, "n_min": 300, "belief_max": 0.20}),  # n 풍부 + 깊은 longshot
+    ("favorite_p080_n300",      {"edge_min": 0.06, "n_min": 300, "belief_min": 0.80}),  # 80센트+ favorites
+    ("balanced_e8_n400",        {"edge_min": 0.08, "n_min": 400, "belief_min": 0.10, "belief_max": 0.90}),  # robust
+    ("triple_tier_strict",      {"edge_min": 0.07, "n_min": 250, "side_filter": "NO"}),  # NO만 + strict
 ]
 
 

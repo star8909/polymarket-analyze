@@ -80,7 +80,13 @@ def main():
     print(f"  종료 마켓 (vol 100k+, settle, token): {len(df)}")
 
     target_tokens = set(df['yes_token'].tolist())
-    token_to_market = {r['yes_token']: {'end_ts': int(r['end_ts']), 'actual_yes': int(r['actual_yes']), 'q': str(r.get('question', ''))[:80]} for _, r in df.iterrows()}
+    token_to_market = {r['yes_token']: {
+        'end_ts': int(r['end_ts']),
+        'actual_yes': int(r['actual_yes']),
+        'q': str(r.get('question', ''))[:80],
+        'category': str(r.get('category', '')) if pd.notna(r.get('category', None)) else '',
+        'volume': float(r.get('volumeNum', 0)) if pd.notna(r.get('volumeNum', 0)) else 0.0,
+    } for _, r in df.iterrows()}
     print(f"  Target tokens: {len(target_tokens)}")
 
     # File-based CSV 처리 (압축 해제됨)
@@ -161,9 +167,19 @@ def main():
             'actual_yes': info['actual_yes'],
             'n_trades': len(in_window),
             'q': info['q'],
+            'end_ts': info['end_ts'],
+            'category': info['category'],
+            'volume': info['volume'],
         })
 
     print(f"\n  Closing belief 추출: {len(closing_beliefs)}")
+
+    # save per-market parquet for paper-trade sim
+    if closing_beliefs:
+        cb_full = pd.DataFrame(closing_beliefs)
+        cb_path = CACHE_DIR / "closing_beliefs.parquet"
+        cb_full.to_parquet(cb_path, index=False)
+        print(f"  → per-market parquet: {cb_path} ({len(cb_full)} markets)")
 
     if len(closing_beliefs) < 50:
         print(f"  ❌ 샘플 너무 적음")

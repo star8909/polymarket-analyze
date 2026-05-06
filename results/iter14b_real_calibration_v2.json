@@ -1,0 +1,80 @@
+{
+  "version": "v2",
+  "n_calibrated": 16123,
+  "n_markets_metadata": 51294,
+  "calibration_buckets": [
+    {
+      "bin": "(-0.001, 0.1]",
+      "n": 4827,
+      "avg_belief": 0.022582990302339914,
+      "actual_yes": 0.016366273047441475
+    },
+    {
+      "bin": "(0.1, 0.2]",
+      "n": 1443,
+      "avg_belief": 0.15065005313969282,
+      "actual_yes": 0.14622314622314622
+    },
+    {
+      "bin": "(0.2, 0.3]",
+      "n": 1506,
+      "avg_belief": 0.24980615895926564,
+      "actual_yes": 0.23041168658698538
+    },
+    {
+      "bin": "(0.3, 0.4]",
+      "n": 1343,
+      "avg_belief": 0.350756145365042,
+      "actual_yes": 0.31794489947877885
+    },
+    {
+      "bin": "(0.4, 0.5]",
+      "n": 1837,
+      "avg_belief": 0.46246264330766734,
+      "actual_yes": 0.4458356015242243
+    },
+    {
+      "bin": "(0.5, 0.6]",
+      "n": 1859,
+      "avg_belief": 0.53621469890376,
+      "actual_yes": 0.5459924690693921
+    },
+    {
+      "bin": "(0.6, 0.7]",
+      "n": 1017,
+      "avg_belief": 0.6488731055398462,
+      "actual_yes": 0.6941986234021632
+    },
+    {
+      "bin": "(0.7, 0.8]",
+      "n": 838,
+      "avg_belief": 0.7488628992045074,
+      "actual_yes": 0.8138424821002387
+    },
+    {
+      "bin": "(0.8, 0.9]",
+      "n": 666,
+      "avg_belief": 0.846657761254872,
+      "actual_yes": 0.8738738738738738
+    },
+    {
+      "bin": "(0.9, 1.0]",
+      "n": 787,
+      "avg_belief": 0.9617122907162778,
+      "actual_yes": 0.9504447268106735
+    }
+  ],
+  "data_sources": [
+    "c:\\Projects\\Quant\\polymarket-analyze\\data\\poly_data\\orderFilled_complete.csv",
+    "c:\\Projects\\Quant\\polymarket-analyze\\data\\poly_data\\goldsky_parallel\\window_00.csv",
+    "c:\\Projects\\Quant\\polymarket-analyze\\data\\poly_data\\goldsky_parallel\\window_01.csv",
+    "c:\\Projects\\Quant\\polymarket-analyze\\data\\poly_data\\goldsky_parallel\\window_02.csv",
+    "c:\\Projects\\Quant\\polymarket-analyze\\data\\poly_data\\goldsky_parallel\\window_03.csv",
+    "c:\\Projects\\Quant\\polymarket-analyze\\data\\poly_data\\goldsky_parallel\\window_04.csv",
+    "c:\\Projects\\Quant\\polymarket-analyze\\data\\poly_data\\goldsky_parallel\\window_05.csv",
+    "c:\\Projects\\Quant\\polymarket-analyze\\data\\poly_data\\goldsky_parallel\\window_06.csv",
+    "c:\\Projects\\Quant\\polymarket-analyze\\data\\poly_data\\goldsky_parallel\\window_07.csv"
+  ],
+  "rows_processed": 318850106,
+  "rows_matched": 75259571
+}

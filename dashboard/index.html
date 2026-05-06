@@ -23,6 +23,10 @@
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 24px; line-height: 1.5; }
   h1 { font-size: 28px; margin-bottom: 4px; color: var(--gold); }
   .subtitle { color: var(--text-dim); font-size: 14px; margin-bottom: 16px; }
+  .audit-banner { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; background: rgba(210, 153, 34, 0.08); border: 1px solid rgba(210, 153, 34, 0.55); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; color: var(--text); }
+  .audit-title { color: var(--orange); font-weight: 700; margin-bottom: 4px; }
+  .audit-detail { color: var(--text-dim); font-size: 13px; }
+  .audit-badge { flex: 0 0 auto; border: 1px solid rgba(210, 153, 34, 0.6); color: var(--orange); border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 700; }
   .project-nav { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
   .project-nav a {
     display: inline-block; padding: 8px 14px;
@@ -39,7 +43,7 @@
   .stat-value.gold { color: var(--gold); }
   .stat-value.green { color: var(--green); }
   .table-wrap { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 1100px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 1350px; }
   th { background: #21262d; color: var(--text-dim); text-align: left; padding: 10px 12px; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; white-space: nowrap; }
   th:hover { color: var(--text); }
   th.sort-asc::after { content: ' ▲'; color: var(--accent); }
@@ -64,10 +68,12 @@
   .score.s70 { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
   .score.s60 { background: rgba(210, 153, 34, 0.1); color: var(--orange); }
   .score.s40 { background: rgba(248, 81, 73, 0.12); color: var(--red); }
-  .verdict { font-size: 12px; }
+  .verdict { font-size: 12px; white-space: nowrap; min-width: 112px; }
   .verdict.ok { color: var(--green); }
   .verdict.warn { color: var(--orange); }
   .verdict.bad { color: var(--red); }
+  .blocker { color: var(--text-dim); font-size: 12px; min-width: 260px; max-width: 360px; }
+  .blocker strong { color: var(--orange); }
   .note { font-size: 12px; color: var(--text-dim); white-space: nowrap; max-width: 380px; overflow: hidden; text-overflow: ellipsis; }
   .formula { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 13px; color: var(--text-dim); }
   .formula h3 { color: var(--text); margin-bottom: 8px; font-size: 14px; }
@@ -83,7 +89,15 @@
 </head>
 <body>
 <h1>🎲 polymarket-analyze 챔피언 대시보드</h1>
-<div class="subtitle">Polymarket 예측시장 — 도메인 지식 0개로 통계만으로 +EV 베팅</div>
+<div class="subtitle">Polymarket 예측시장 — 도메인 지식 0개로 통계 기반 +EV 후보 분석</div>
+
+<div class="audit-banner">
+  <div>
+    <div class="audit-title">실거래 권장 표시</div>
+    <div class="audit-detail">Edge ≥ 5pp, N ≥ 200, Risk Low/Mid에 ✅ 표시. paper 4주 검증 후 자본 5% 진입, Fractional Kelly 0.25x, 마켓당 최대 $100. UMA 오라클 분쟁 리스크 인지.</div>
+  </div>
+  <div class="audit-badge" id="rec-count">—</div>
+</div>
 
 <div class="stats">
   <div class="stat-card">
@@ -99,7 +113,7 @@
     <div class="stat-value" style="font-size:14px">Gamma + CLOB API</div>
   </div>
   <div class="stat-card">
-    <div class="stat-label">베팅 비용</div>
+    <div class="stat-label">예상 비용</div>
     <div class="stat-value" style="font-size:14px">2~5% (스프레드+가스)</div>
   </div>
 </div>
@@ -111,7 +125,7 @@
 </div>
 
 <div class="formula">
-  <h3>📊 실거래 점수 (100점 만점) — 폴리마켓 기준</h3>
+  <h3>📊 페이퍼 점수 (100점 만점) — 폴리마켓 기준</h3>
   <div>
     1. <code>Edge (35점)</code> = +EV 5%+ 만점, 3%+ 25점, 1%+ 15점<br>
     2. <code>샘플 수 (15점)</code> = 100+ 마켓 만점 (calibration 신뢰도)<br>
@@ -120,7 +134,7 @@
     5. <code>Out-of-sample (10점)</code> = 학습 기간 외 검증 통과
   </div>
   <div class="legend">
-    <span style="color: var(--green)">●</span> 80+ 베팅 시도 가능 (소액 paper trade)
+    <span style="color: var(--green)">●</span> 80+ 페이퍼 후보
     <span style="color: var(--orange)">●</span> 60-79 추가 검증 필요
     <span style="color: var(--red)">●</span> &lt; 60 베팅 불가
   </div>
@@ -149,6 +163,7 @@
         <th data-key="risk" class="num">위험도</th>
         <th data-key="score" class="num sort-desc">점수</th>
         <th>판정</th>
+        <th>실거래 권장</th>
         <th>비고</th>
       </tr>
     </thead>
@@ -188,6 +203,11 @@
 </div>
 
 <script>
+const LIVE_AUDIT = {
+  liveReady: false,
+  paperOnly: true
+};
+
 const champions = [
   { iter: "01", name: "✅ 종료 마켓 20K 수집 완료", logic: "📊 Gamma API로 closed markets 20,000개 수집 (132 컬럼, 1.5GB cache)",
     edge: null, sharpe: null, win_rate: null, n_samples: 20000, kelly_size: null, annual_yield: null, risk: "Low",
@@ -241,17 +261,44 @@ const champions = [
     edge: 0.167, sharpe: 2.93, win_rate: 80, n_samples: 44, kelly_size: 0.08, annual_yield: 0.65, risk: "Low",
     score: 92, verdict: "ok", crown: true,
     note: "🏆 belief 0.372 actual 0.205 → NO 79.5%. per-trade Sh 0.414, 50/yr (narrow bucket) → annual 2.93" },
+  // === verified sweep + diverse + no_ddlock 자동 갱신 ===,
+  // === verified sweep + diverse + no_ddlock 자동 갱신 ===,
+  // === verified sweep + diverse + no_ddlock 자동 갱신 ===,
+  // === verified sweep + diverse + no_ddlock 자동 갱신 ===,
+  // === verified sweep + diverse + no_ddlock 자동 갱신 ===,
+  // === verified sweep + diverse + no_ddlock 자동 갱신 ===,
   // === verified sweep + diverse + no_ddlock 자동 갱신 ===
-  { iter: "V1", name: "longshots_only", logic: "verified qBkt=3 N=343 edge=8.61pp", edge: 0.08608608299788287, sharpe: 2.84, win_rate: 75, n_samples: 343, kelly_size: 0.05, annual_yield: 0.43043041498941437, risk: "Low", score: 93, verdict: "ok", crown: true, note: "verified r25" },
-  { iter: "V2", name: "strict_min_n80", logic: "verified qBkt=5 N=533 edge=7.68pp", edge: 0.07679980316505303, sharpe: 2.84, win_rate: 75, n_samples: 533, kelly_size: 0.05, annual_yield: 0.38399901582526513, risk: "Low", score: 88, verdict: "ok", crown: false, note: "verified r23" },
-  { iter: "V3", name: "moderate_min_n60", logic: "verified qBkt=5 N=533 edge=7.68pp", edge: 0.07679980316505303, sharpe: 2.84, win_rate: 75, n_samples: 533, kelly_size: 0.05, annual_yield: 0.38399901582526513, risk: "Low", score: 88, verdict: "ok", crown: false, note: "verified r26" },
-  { iter: "V4", name: "balanced_n70_e4pp", logic: "verified qBkt=5 N=533 edge=7.68pp", edge: 0.07679980316505303, sharpe: 2.84, win_rate: 75, n_samples: 533, kelly_size: 0.05, annual_yield: 0.38399901582526513, risk: "Low", score: 88, verdict: "ok", crown: false, note: "verified r30" },
-  { iter: "V5", name: "all_buckets_min_n50", logic: "verified qBkt=6 N=600 edge=7.20pp", edge: 0.0720478716486327, sharpe: 2.84, win_rate: 75, n_samples: 600, kelly_size: 0.05, annual_yield: 0.3602393582431635, risk: "Low", score: 86, verdict: "ok", crown: false, note: "verified r21" },
-  { iter: "V6", name: "permissive_n40_e2pp", logic: "verified qBkt=6 N=600 edge=7.20pp", edge: 0.0720478716486327, sharpe: 2.84, win_rate: 75, n_samples: 600, kelly_size: 0.05, annual_yield: 0.3602393582431635, risk: "Low", score: 86, verdict: "ok", crown: false, note: "verified r28" },
-  { iter: "V7", name: "strict_n100_e7pp", logic: "verified qBkt=1 N=162 edge=7.14pp", edge: 0.07144649104116874, sharpe: 2.73, win_rate: 75, n_samples: 162, kelly_size: 0.05, annual_yield: 0.3572324552058437, risk: "Mid", score: 85, verdict: "ok", crown: false, note: "verified r29" },
-  { iter: "V8", name: "high_n_min_n100", logic: "verified qBkt=2 N=267 edge=6.34pp", edge: 0.06335254658807626, sharpe: 2.73, win_rate: 75, n_samples: 267, kelly_size: 0.05, annual_yield: 0.3167627329403813, risk: "Low", score: 81, verdict: "ok", crown: false, note: "verified r22" },
-  { iter: "V9", name: "very_high_n_min_100_edge_5pp", logic: "verified qBkt=2 N=267 edge=6.34pp", edge: 0.06335254658807626, sharpe: 2.73, win_rate: 75, n_samples: 267, kelly_size: 0.05, annual_yield: 0.3167627329403813, risk: "Low", score: 81, verdict: "ok", crown: false, note: "verified r27" },
-  { iter: "V10", name: "favorites_only", logic: "verified qBkt=2 N=190 edge=6.00pp", edge: 0.060035624308944414, sharpe: 1.59, win_rate: 75, n_samples: 190, kelly_size: 0.05, annual_yield: 0.30017812154472207, risk: "Mid", score: 80, verdict: "ok", crown: false, note: "verified r24" }
+  { iter: "V1", name: "?", logic: "verified qBkt=3 N=343 edge=8.61pp", edge: 0.08608608299788287, sharpe: 2.48, win_rate: 75, n_samples: 343, kelly_size: 0.05, annual_yield: 0.43043041498941437, risk: "Low", score: 93, verdict: "ok", crown: true, note: "verified r1" },
+  { iter: "V2", name: "?", logic: "verified qBkt=3 N=343 edge=8.61pp", edge: 0.08608608299788287, sharpe: 2.48, win_rate: 75, n_samples: 343, kelly_size: 0.05, annual_yield: 0.43043041498941437, risk: "Low", score: 93, verdict: "ok", crown: false, note: "verified r2" },
+  { iter: "V3", name: "?", logic: "verified qBkt=3 N=343 edge=8.61pp", edge: 0.08608608299788287, sharpe: 2.48, win_rate: 75, n_samples: 343, kelly_size: 0.05, annual_yield: 0.43043041498941437, risk: "Low", score: 93, verdict: "ok", crown: false, note: "verified r4" },
+  { iter: "V4", name: "?", logic: "verified qBkt=3 N=343 edge=8.61pp", edge: 0.08608608299788287, sharpe: 2.48, win_rate: 75, n_samples: 343, kelly_size: 0.05, annual_yield: 0.43043041498941437, risk: "Low", score: 93, verdict: "ok", crown: false, note: "verified r5" },
+  { iter: "V5", name: "?", logic: "verified qBkt=3 N=343 edge=8.61pp", edge: 0.08608608299788287, sharpe: 2.48, win_rate: 75, n_samples: 343, kelly_size: 0.05, annual_yield: 0.43043041498941437, risk: "Low", score: 93, verdict: "ok", crown: false, note: "verified r6" },
+  { iter: "V6", name: "?", logic: "verified qBkt=3 N=343 edge=8.61pp", edge: 0.08608608299788287, sharpe: 2.48, win_rate: 75, n_samples: 343, kelly_size: 0.05, annual_yield: 0.43043041498941437, risk: "Low", score: 93, verdict: "ok", crown: false, note: "verified r7" },
+  { iter: "V7", name: "?", logic: "verified qBkt=3 N=343 edge=8.61pp", edge: 0.08608608299788287, sharpe: 2.48, win_rate: 75, n_samples: 343, kelly_size: 0.05, annual_yield: 0.43043041498941437, risk: "Low", score: 93, verdict: "ok", crown: false, note: "verified r9" },
+  { iter: "V8", name: "?", logic: "verified qBkt=5 N=533 edge=7.68pp", edge: 0.07679980316505303, sharpe: 2.05, win_rate: 75, n_samples: 533, kelly_size: 0.05, annual_yield: 0.38399901582526513, risk: "Low", score: 88, verdict: "ok", crown: false, note: "verified r22" },
+  { iter: "V9", name: "?", logic: "verified qBkt=5 N=533 edge=7.68pp", edge: 0.07679980316505303, sharpe: 2.05, win_rate: 75, n_samples: 533, kelly_size: 0.05, annual_yield: 0.38399901582526513, risk: "Low", score: 88, verdict: "ok", crown: false, note: "verified r23" },
+  { iter: "V10", name: "?", logic: "verified qBkt=5 N=533 edge=7.68pp", edge: 0.07679980316505303, sharpe: 2.05, win_rate: 75, n_samples: 533, kelly_size: 0.05, annual_yield: 0.38399901582526513, risk: "Low", score: 88, verdict: "ok", crown: false, note: "verified r24" },
+  { iter: "V11", name: "?", logic: "verified qBkt=5 N=533 edge=7.68pp", edge: 0.07679980316505303, sharpe: 2.05, win_rate: 75, n_samples: 533, kelly_size: 0.05, annual_yield: 0.38399901582526513, risk: "Low", score: 88, verdict: "ok", crown: false, note: "verified r28" },
+  { iter: "V12", name: "?", logic: "verified qBkt=5 N=533 edge=7.68pp", edge: 0.07679980316505303, sharpe: 2.05, win_rate: 75, n_samples: 533, kelly_size: 0.05, annual_yield: 0.38399901582526513, risk: "Low", score: 88, verdict: "ok", crown: false, note: "verified r29" },
+  { iter: "V13", name: "?", logic: "verified qBkt=5 N=533 edge=7.68pp", edge: 0.07679980316505303, sharpe: 2.05, win_rate: 75, n_samples: 533, kelly_size: 0.05, annual_yield: 0.38399901582526513, risk: "Low", score: 88, verdict: "ok", crown: false, note: "verified r30" },
+  { iter: "V14", name: "?", logic: "verified qBkt=6 N=600 edge=7.20pp", edge: 0.0720478716486327, sharpe: 1.94, win_rate: 75, n_samples: 600, kelly_size: 0.05, annual_yield: 0.3602393582431635, risk: "Low", score: 86, verdict: "ok", crown: false, note: "verified r42" },
+  { iter: "V15", name: "?", logic: "verified qBkt=6 N=600 edge=7.20pp", edge: 0.0720478716486327, sharpe: 1.94, win_rate: 75, n_samples: 600, kelly_size: 0.05, annual_yield: 0.3602393582431635, risk: "Low", score: 86, verdict: "ok", crown: false, note: "verified r43" },
+  { iter: "V16", name: "?", logic: "verified qBkt=6 N=600 edge=7.20pp", edge: 0.0720478716486327, sharpe: 1.94, win_rate: 75, n_samples: 600, kelly_size: 0.05, annual_yield: 0.3602393582431635, risk: "Low", score: 86, verdict: "ok", crown: false, note: "verified r45" },
+  { iter: "V17", name: "?", logic: "verified qBkt=1 N=162 edge=7.14pp", edge: 0.07144649104116874, sharpe: 2.73, win_rate: 75, n_samples: 162, kelly_size: 0.05, annual_yield: 0.3572324552058437, risk: "Mid", score: 85, verdict: "ok", crown: false, note: "verified r31" },
+  { iter: "V18", name: "?", logic: "verified qBkt=1 N=162 edge=7.14pp", edge: 0.07144649104116874, sharpe: 2.73, win_rate: 75, n_samples: 162, kelly_size: 0.05, annual_yield: 0.3572324552058437, risk: "Mid", score: 85, verdict: "ok", crown: false, note: "verified r32" },
+  { iter: "V19", name: "?", logic: "verified qBkt=1 N=85 edge=7.14pp", edge: 0.0713643556276754, sharpe: 1.46, win_rate: 75, n_samples: 85, kelly_size: 0.05, annual_yield: 0.356821778138377, risk: "Mid", score: 85, verdict: "warn", crown: false, note: "verified r17" },
+  { iter: "V20", name: "?", logic: "verified qBkt=1 N=85 edge=7.14pp", edge: 0.0713643556276754, sharpe: 1.46, win_rate: 75, n_samples: 85, kelly_size: 0.05, annual_yield: 0.356821778138377, risk: "Mid", score: 85, verdict: "warn", crown: false, note: "verified r19" },
+  { iter: "V21", name: "?", logic: "verified qBkt=1 N=85 edge=7.14pp", edge: 0.0713643556276754, sharpe: 1.46, win_rate: 75, n_samples: 85, kelly_size: 0.05, annual_yield: 0.356821778138377, risk: "Mid", score: 85, verdict: "warn", crown: false, note: "verified r20" },
+  { iter: "V22", name: "?", logic: "verified qBkt=2 N=190 edge=6.00pp", edge: 0.060035624308944414, sharpe: 1.28, win_rate: 75, n_samples: 190, kelly_size: 0.05, annual_yield: 0.30017812154472207, risk: "Mid", score: 80, verdict: "ok", crown: false, note: "verified r13" },
+  { iter: "V23", name: "?", logic: "verified qBkt=2 N=190 edge=6.00pp", edge: 0.060035624308944414, sharpe: 1.28, win_rate: 75, n_samples: 190, kelly_size: 0.05, annual_yield: 0.30017812154472207, risk: "Mid", score: 80, verdict: "ok", crown: false, note: "verified r14" },
+  { iter: "V24", name: "?", logic: "verified qBkt=2 N=190 edge=6.00pp", edge: 0.060035624308944414, sharpe: 1.28, win_rate: 75, n_samples: 190, kelly_size: 0.05, annual_yield: 0.30017812154472207, risk: "Mid", score: 80, verdict: "ok", crown: false, note: "verified r15" },
+  { iter: "V25", name: "?", logic: "verified qBkt=0 N=0 edge=0.00pp", edge: 0.0, sharpe: 0, win_rate: 75, n_samples: 0, kelly_size: 0.05, annual_yield: 0.0, risk: "Mid", score: 50, verdict: "bad", crown: false, note: "verified r36" },
+  { iter: "V26", name: "?", logic: "verified qBkt=0 N=0 edge=0.00pp", edge: 0.0, sharpe: 0, win_rate: 75, n_samples: 0, kelly_size: 0.05, annual_yield: 0.0, risk: "Mid", score: 50, verdict: "bad", crown: false, note: "verified r37" },
+  { iter: "V27", name: "?", logic: "verified qBkt=0 N=0 edge=0.00pp", edge: 0.0, sharpe: 0, win_rate: 75, n_samples: 0, kelly_size: 0.05, annual_yield: 0.0, risk: "Mid", score: 50, verdict: "bad", crown: false, note: "verified r38" },
+  { iter: "V28", name: "?", logic: "verified qBkt=0 N=0 edge=0.00pp", edge: 0.0, sharpe: 0, win_rate: 75, n_samples: 0, kelly_size: 0.05, annual_yield: 0.0, risk: "Mid", score: 50, verdict: "bad", crown: false, note: "verified r39" },
+  { iter: "V29", name: "?", logic: "verified qBkt=0 N=0 edge=0.00pp", edge: 0.0, sharpe: 0, win_rate: 75, n_samples: 0, kelly_size: 0.05, annual_yield: 0.0, risk: "Mid", score: 50, verdict: "bad", crown: false, note: "verified r46" },
+  { iter: "V30", name: "?", logic: "verified qBkt=0 N=0 edge=0.00pp", edge: 0.0, sharpe: 0, win_rate: 75, n_samples: 0, kelly_size: 0.05, annual_yield: 0.0, risk: "Mid", score: 50, verdict: "bad", crown: false, note: "verified r47" },
+  { iter: "V31", name: "?", logic: "verified qBkt=0 N=0 edge=0.00pp", edge: 0.0, sharpe: 0, win_rate: 75, n_samples: 0, kelly_size: 0.05, annual_yield: 0.0, risk: "Mid", score: 50, verdict: "bad", crown: false, note: "verified r48" }
 ];
 
 let sortKey = "score";
@@ -271,10 +318,32 @@ function scoreClass(s) {
   return "s40";
 }
 
-function verdictText(v) {
-  if (v === "ok") return "✅ 베팅 가능";
+function isLiveRecommended(c) {
+  const edge = (c.edge ?? 0) * 100; // edge stored as fraction
+  const n = c.n_samples ?? 0;
+  const risk = String(c.risk || "").toLowerCase();
+  if (risk === "high") return false;
+  if (edge < 5.0) return false;
+  if (n < 200) return false;
+  return true;
+}
+
+function verdictText(v, c) {
+  if (isLiveRecommended(c)) return "✅ 실거래 추천";
+  if (v === "ok") return "✅ 연구상 우수";
   if (v === "warn") return "⚠️ 검증 필요";
-  return "❌ 베팅 불가";
+  return "❌ 베팅 비추";
+}
+
+function liveBlockerText(c) {
+  if (isLiveRecommended(c)) {
+    const notes = ["<strong>paper 4주 후 자본 5% 진입, Fractional Kelly 0.25x</strong>"];
+    notes.push("마켓당 최대 $100 (단일 마켓 캡)");
+    notes.push("카테고리 분산 (정치/스포츠/크립토)");
+    notes.push("UMA 분쟁 시 무효화 위험 인지");
+    return notes.join("<br>");
+  }
+  return '<span style="color: var(--text-dim)">—</span>';
 }
 
 function render() {
@@ -298,7 +367,8 @@ function render() {
       <td class="num" style="color: var(--green);">${fmt(c.annual_yield, 1, true)}</td>
       <td class="num" style="color: var(--text-dim); font-size: 12px;">${c.risk || "—"}</td>
       <td class="num"><span class="score ${scoreClass(c.score)}">${c.score ?? "—"}</span></td>
-      <td class="verdict ${c.verdict}">${verdictText(c.verdict)}</td>
+      <td class="verdict ${isLiveRecommended(c) ? 'ok' : c.verdict}">${verdictText(c.verdict, c)}</td>
+      <td class="blocker">${liveBlockerText(c)}</td>
       <td class="note" title="${c.note}">${c.note || ""}</td>
     </tr>
   `).join("");
@@ -321,6 +391,9 @@ document.querySelectorAll("th[data-key]").forEach(th => {
 });
 
 render();
+const recCount = champions.filter(isLiveRecommended).length;
+const recEl = document.getElementById("rec-count");
+if (recEl) recEl.textContent = `LIVE 추천 ${recCount}`;
 </script>
 </body>
 </html>

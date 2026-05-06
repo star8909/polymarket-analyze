@@ -1,0 +1,5 @@
+.env
+*.log
+*.csv
+KILL
+__pycache__/
